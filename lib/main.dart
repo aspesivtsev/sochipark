@@ -10,9 +10,37 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Sochi Park',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+          primarySwatch: Colors.pink,
+          //57, 75, 193, 1 or  #394BC1
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+          accentColor: Colors.amber,
+          canvasColor: Color.fromRGBO(255, 254, 229, 1),
+          scaffoldBackgroundColor: Colors.blue[50],
+          fontFamily: 'Raleway',
+          textTheme: ThemeData.light().textTheme.copyWith(
+              bodyText2: const TextStyle(
+                color: Color.fromRGBO(20, 51, 51, 1),
+              ),
+              bodyText1: TextStyle(
+                color: Color.fromRGBO(20, 51, 51, 1),
+              ),
+              headline6: const TextStyle(
+                fontSize: 22,
+                fontFamily: 'RobotoCondensed',
+                fontWeight: FontWeight.bold,
+                shadows: [
+                  const Shadow(
+                    blurRadius: 15.0,
+                    color: Colors.white,
+                    offset: Offset(0, 0),
+                  ),
+                  const Shadow(
+                    blurRadius: 2.0,
+                    color: Colors.white,
+                    offset: Offset(0, 0),
+                  ),
+                ],
+              ))),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
