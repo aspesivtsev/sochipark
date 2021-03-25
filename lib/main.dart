@@ -13,8 +13,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           primarySwatch: Colors.deepPurple,
           visualDensity: VisualDensity.adaptivePlatformDensity,
-          accentColor: Colors.green,
-          canvasColor: Color.fromRGBO(255, 254, 229, 1),
+          accentColor: Colors.lightGreen,
+          canvasColor: Color.fromRGBO(255, 255, 255, 1),
           scaffoldBackgroundColor: Colors.white,
           fontFamily: 'Tavolga',
           textTheme: ThemeData.light().textTheme.copyWith(
@@ -39,9 +39,14 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text(
           'Сочи Парк',
-          style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 32, fontWeight: FontWeight.normal),
+          /*title: Padding(
+          padding: const EdgeInsets.all(50.0),
+          child: Image.asset('assets/images/sochipark_logo_small.png',
+              fit: BoxFit.cover),*/
         ),
       ),
       drawer: MainDrawer(),
