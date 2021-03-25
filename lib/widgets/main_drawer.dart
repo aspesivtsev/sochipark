@@ -7,45 +7,60 @@ class MainDrawer extends StatelessWidget {
       child: Column(
         children: <Widget>[
           Container(
-            height: 120,
+            height: 90,
             width: double.infinity,
-            padding: EdgeInsets.all(30),
-            alignment: Alignment.centerLeft,
+            // margin: EdgeInsets.all(20),
+            padding: EdgeInsets.only(top: 30, left: 20),
+            alignment: Alignment.center,
             color: Theme.of(context).accentColor,
             child: Text(
-              'Сочи Парк',
+              'Волшебство начинается...',
               style: TextStyle(
                   //fontWeight: FontWeight.w900,
-                  fontSize: 30,
-                  color: Theme.of(context).primaryColorDark),
+                  fontSize: 20,
+                  color: Colors.white),
             ),
           ),
           SizedBox(
-            height: 20,
+            height: 10,
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.attractions,
+              size: 24,
+            ),
+            title: Text('Аттракционы',
+                style: TextStyle(
+                    fontFamily: 'Montserrat',
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold)
+                //),
+                ),
+            onTap: () {},
           ),
           ListTile(
             leading: Icon(
               Icons.map,
-              size: 26,
+              size: 24,
             ),
             title: Text('Карта',
                 style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontSize: 24,
-                )
-                //fontWeight: FontWeight.bold),
+                    fontFamily: 'Montserrat',
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold)
+                //),
                 ),
             onTap: () {},
           ),
           ListTile(
             leading: Icon(
               Icons.event,
-              size: 26,
+              size: 24,
             ),
             title: Text('Афиша',
                 style: TextStyle(
                   fontFamily: 'Montserrat',
-                  fontSize: 24,
+                  fontSize: 22,
                 )
                 //fontWeight: FontWeight.bold),
                 ),
