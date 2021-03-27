@@ -40,13 +40,25 @@ class MyHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
-          'Сочи Парк',
-          style: TextStyle(fontSize: 32, fontWeight: FontWeight.normal),
-          /*title: Padding(
-          padding: const EdgeInsets.all(50.0),
-          child: Image.asset('assets/images/sochipark_logo_small.png',
-              fit: BoxFit.cover),*/
+        title: Column(
+          children: [
+            Text(
+              'Сочи Парк',
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.normal),
+              /*title: Padding(
+              padding: const EdgeInsets.all(50.0),
+              child: Image.asset('assets/images/sochipark_logo_small.png',
+                  fit: BoxFit.cover),*/
+            ),
+            /*Text(
+              'волшебство начинается',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
+              /*title: Padding(
+              padding: const EdgeInsets.all(50.0),
+              child: Image.asset('assets/images/sochipark_logo_small.png',
+                  fit: BoxFit.cover),*/
+            ),*/
+          ],
         ),
       ),
       drawer: MainDrawer(),

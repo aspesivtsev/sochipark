@@ -31,10 +31,10 @@ class MainDrawer extends StatelessWidget {
             ),
             title: Text('Аттракционы',
                 style: TextStyle(
-                    fontFamily: 'Montserrat',
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold)
-                //),
+                  fontFamily: 'Montserrat',
+                  fontSize: 22,
+                )
+                //fontWeight: FontWeight.bold),
                 ),
             onTap: () {},
           ),
@@ -45,10 +45,10 @@ class MainDrawer extends StatelessWidget {
             ),
             title: Text('Карта',
                 style: TextStyle(
-                    fontFamily: 'Montserrat',
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold)
-                //),
+                  fontFamily: 'Montserrat',
+                  fontSize: 22,
+                )
+                //fontWeight: FontWeight.bold),
                 ),
             onTap: () {},
           ),
