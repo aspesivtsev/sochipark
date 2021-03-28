@@ -62,19 +62,27 @@ class MyHomePage extends StatelessWidget {
         ),
       ),
       drawer: MainDrawer(),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Center(
-              child: Text(
-                'Center',
-                style: Theme.of(context).textTheme.headline6,
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [Color.fromRGBO(83, 33, 168, 0.1), Colors.white]),
+        ),
+        child: Center(
+          // Center is a layout widget. It takes a single child and positions it
+          // in the middle of the parent.
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Center(
+                child: Text(
+                  'Center',
+                  style: Theme.of(context).textTheme.headline6,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
