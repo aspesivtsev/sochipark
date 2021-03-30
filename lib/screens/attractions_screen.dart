@@ -33,7 +33,8 @@ class AttractionsScreen extends StatelessWidget {
           gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [Color.fromRGBO(83, 33, 168, 0.1), Colors.white]),
+              colors: [Colors.deepPurple, Colors.pink]),
+          //colors: [Color.fromRGBO(83, 33, 168, 0.1), Colors.white]),
         ),
         child: ListView.builder(
           itemBuilder: (ctx, index) {
