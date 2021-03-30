@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import './widgets/main_drawer.dart';
+//import './widgets/main_drawer.dart';
+import './screens/attractions_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,62 +30,16 @@ class MyApp extends StatelessWidget {
                 fontFamily: 'Tavolga',
                 fontWeight: FontWeight.bold,
               ))),
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Column(
-          children: [
-            Text(
-              'Сочи Парк',
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.normal),
-              /*title: Padding(
-              padding: const EdgeInsets.all(50.0),
-              child: Image.asset('assets/images/sochipark_logo_small.png',
-                  fit: BoxFit.cover),*/
-            ),
-            /*Text(
-              'волшебство начинается',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
-              /*title: Padding(
-              padding: const EdgeInsets.all(50.0),
-              child: Image.asset('assets/images/sochipark_logo_small.png',
-                  fit: BoxFit.cover),*/
-            ),*/
-          ],
-        ),
-      ),
-      drawer: MainDrawer(),
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [Color.fromRGBO(83, 33, 168, 0.1), Colors.white]),
-        ),
-        child: Center(
-          // Center is a layout widget. It takes a single child and positions it
-          // in the middle of the parent.
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Center(
-                child: Text(
-                  'Center',
-                  style: Theme.of(context).textTheme.headline6,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+      //home: MyHomePage(),
+      initialRoute: '/',
+      routes: {
+        '/': (ctx) => AttractionsScreen(),
+        AttractionsScreen.routName: (ctx) => AttractionsScreen(),
+      },
+      onUnknownRoute: (settings) {
+        //if all the routes fail it will show the main screen
+        return MaterialPageRoute(builder: (ctx) => AttractionsScreen());
+      },
     );
   }
 }
