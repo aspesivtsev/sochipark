@@ -35,7 +35,7 @@ class AttractionItem extends StatelessWidget {
     required this.sorting,
   });
 
-  /*void selectMeal(BuildContext context) {
+  /*void selectAttraction(BuildContext context) {
     Navigator.of(context).pushNamed(AttractionDetailScreen.routeName,
         arguments: {'id': id, 'color': color});
   }*/
@@ -43,7 +43,7 @@ class AttractionItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      //onTap: () => selectMeal(context),
+      //onTap: () => selectAttraction(context),
       child: Card(
         color: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
@@ -81,7 +81,7 @@ class AttractionItem extends StatelessWidget {
                     child: Text(
                       title,
                       style: TextStyle(
-                          letterSpacing: -2,
+                          letterSpacing: -1,
                           fontSize: 26,
                           color: Colors.white,
                           fontWeight: FontWeight.w100),
@@ -100,16 +100,7 @@ class AttractionItem extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Icon(Icons.schedule),
-                      SizedBox(
-                        width: 6,
-                      ),
-                      Text('$age min')
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Icon(Icons.work),
+                      Icon(Icons.public),
                       SizedBox(
                         width: 6,
                       ),
@@ -118,7 +109,16 @@ class AttractionItem extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Icon(Icons.attach_money),
+                      Icon(Icons.accessibility_new),
+                      SizedBox(
+                        width: 6,
+                      ),
+                      Text('$age')
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Icon(Icons.height),
                       SizedBox(
                         width: 6,
                       ),
