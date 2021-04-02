@@ -5,6 +5,12 @@ import '../dummy_data.dart';
 
 class AttractionsScreen extends StatelessWidget {
   static const routName = '/attractions';
+  //final image not to rebuil it
+  final Image titleImage = Image.asset(
+    'assets/images/sochipark_logo_small-white.png',
+    fit: BoxFit.contain,
+    height: 40,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -18,23 +24,30 @@ class AttractionsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
+        /*title: Text(
           'Сочи Парк',
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.normal),
-          /*title: Padding(
-          padding: const EdgeInsets.all(50.0),
-          child: Image.asset('assets/images/sochipark_logo_small.png',
-              fit: BoxFit.cover),*/
+          style: TextStyle(fontSize: 30, fontWeight: FontWeight.normal),*/
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            titleImage,
+            Container(
+              padding: const EdgeInsets.all(15.0),
+              child: Text('  '),
+            )
+          ],
         ),
       ),
       drawer: MainDrawer(),
       body: Container(
         decoration: const BoxDecoration(
-          gradient: LinearGradient(
+          color: const Color.fromRGBO(180, 180, 255, 1),
+          //color: Color.fromRGBO(255, 238, 165, 1),
+          /*gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [Colors.deepPurple, Colors.pink]),
-          //colors: [Color.fromRGBO(83, 33, 168, 0.1), Colors.white]),
+              colors: [Colors.lightGreen, Color.fromRGBO(255, 238, 165, 1)]),
+          //colors: [Color.fromRGBO(83, 33, 168, 0.1), Colors.white]),*/
         ),
         child: ListView.builder(
           itemBuilder: (ctx, index) {
