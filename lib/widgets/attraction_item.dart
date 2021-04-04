@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
+import '../screens/attraction_detail_screen.dart';
 
 class AttractionItem extends StatelessWidget {
   final String id;
@@ -36,15 +37,15 @@ class AttractionItem extends StatelessWidget {
     required this.sorting,
   });
 
-  /*void selectAttraction(BuildContext context) {
-    Navigator.of(context).pushNamed(AttractionDetailScreen.routeName,
-        arguments: {'id': id, 'color': color});
-  }*/
+  void selectAttraction(BuildContext context) {
+    Navigator.of(context)
+        .pushNamed(AttractionDetailScreen.routeName, arguments: {'id': id});
+  }
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      //onTap: () => selectAttraction(context),
+      onTap: () => selectAttraction(context),
       child: Card(
         color: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),

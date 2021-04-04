@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../screens/attractions_screen.dart';
 
 class MainDrawer extends StatelessWidget {
   @override
@@ -36,7 +37,9 @@ class MainDrawer extends StatelessWidget {
                 )
                 //fontWeight: FontWeight.bold),
                 ),
-            onTap: () {},
+            onTap: () {
+              AttractionsScreen();
+            },
           ),
           ListTile(
             leading: Icon(

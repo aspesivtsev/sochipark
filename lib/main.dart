@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 //import './widgets/main_drawer.dart';
 import './screens/attractions_screen.dart';
+import './screens/attraction_detail_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           primarySwatch: Colors.deepPurple,
           visualDensity: VisualDensity.adaptivePlatformDensity,
-          accentColor: Colors.yellow,
+          accentColor: Colors.lightGreen,
           canvasColor: Color.fromRGBO(255, 255, 255, 1),
           scaffoldBackgroundColor: Colors.white,
           fontFamily: 'Tavolga',
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (ctx) => AttractionsScreen(),
         AttractionsScreen.routName: (ctx) => AttractionsScreen(),
+        AttractionDetailScreen.routeName: (ctx) => AttractionDetailScreen(),
       },
       onUnknownRoute: (settings) {
         //if all the routes fail it will show the main screen
