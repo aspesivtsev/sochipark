@@ -36,7 +36,15 @@ class AttractionDetailScreen extends StatelessWidget {
     final selectedAttraction = DUMMY_ATTRACTIONS
         .firstWhere((attraction) => attraction.id == attractionId);
     final _sample = selectedAttraction.types;
-    _sample.asMap().forEach((index, value) => print(index));
+    _sample.asMap().forEach(
+        (index, value) => DUMMY_TYPES.firstWhere((_type) => _type.id == value));
+
+    for (String ctype in _sample) {
+      print('ebat' + ctype);
+      final result_name = DUMMY_TYPES.firstWhere((_type) => _type.id == ctype);
+      print(result_name.title);
+    }
+
     print(_sample);
     return Scaffold(
       appBar: AppBar(
