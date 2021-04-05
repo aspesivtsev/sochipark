@@ -49,7 +49,7 @@ class AttractionItem extends StatelessWidget {
       child: Card(
         color: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        elevation: 4,
+        elevation: 6,
         margin: EdgeInsets.all(10),
         child: Column(
           children: <Widget>[

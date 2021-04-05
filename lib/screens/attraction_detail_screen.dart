@@ -27,6 +27,8 @@ class AttractionDetailScreen extends StatelessWidget {
     );
   }
 
+//buildTypesList
+
   @override
   Widget build(BuildContext context) {
     // final mediaQuery = MediaQuery.of(context);
@@ -36,16 +38,18 @@ class AttractionDetailScreen extends StatelessWidget {
     final selectedAttraction = DUMMY_ATTRACTIONS
         .firstWhere((attraction) => attraction.id == attractionId);
     final _sample = selectedAttraction.types;
-    _sample.asMap().forEach(
-        (index, value) => DUMMY_TYPES.firstWhere((_type) => _type.id == value));
+    //_sample.asMap().forEach((index, value) => DUMMY_TYPES.firstWhere((_type) => _type.id == value));
+    final List resultTypes = [];
+    final List<Widget> resultTypesWidgets =
+        List.filled(resultTypes.length, Text('AAA'));
 
     for (String ctype in _sample) {
-      print('ebat' + ctype);
-      final result_name = DUMMY_TYPES.firstWhere((_type) => _type.id == ctype);
-      print(result_name.title);
+      final resultName = DUMMY_TYPES.firstWhere((_type) => _type.id == ctype);
+      resultTypes.add(resultName.title);
+      //print(resultName.title);
     }
 
-    print(_sample);
+    //print(_sample);
     return Scaffold(
       appBar: AppBar(
         title: FittedBox(
@@ -66,7 +70,15 @@ class AttractionDetailScreen extends StatelessWidget {
             buildSectionTitle(context, selectedAttraction.title),
             buildSectionText(context, selectedAttraction.shortDescr),
             buildSectionText(context, selectedAttraction.description),
-            //buildSectionText(context, selectedAttraction.types),
+            Row(
+              children: [
+                //resultTypesWidgets
+                Chip(
+                  avatar: CircleAvatar(child: Text('#')),
+                  label: Text(resultTypes.toString()),
+                ),
+              ],
+            ),
           ],
         ),
       ),
