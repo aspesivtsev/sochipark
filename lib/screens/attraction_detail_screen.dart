@@ -33,23 +33,19 @@ class AttractionDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // final mediaQuery = MediaQuery.of(context);
     final _id =
-        ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+        ModalRoute.of(context)!.settings.arguments as Map<String, String>;
     final attractionId = _id['id'];
     final selectedAttraction = DUMMY_ATTRACTIONS
         .firstWhere((attraction) => attraction.id == attractionId);
     final _sample = selectedAttraction.types;
     //_sample.asMap().forEach((index, value) => DUMMY_TYPES.firstWhere((_type) => _type.id == value));
     final List resultTypes = [];
-    final List<Widget> resultTypesWidgets =
-        List.filled(resultTypes.length, Text('AAA'));
 
     for (String ctype in _sample) {
       final resultName = DUMMY_TYPES.firstWhere((_type) => _type.id == ctype);
       resultTypes.add(resultName.title);
-      //print(resultName.title);
     }
 
-    //print(_sample);
     return Scaffold(
       appBar: AppBar(
         title: FittedBox(
@@ -67,18 +63,23 @@ class AttractionDetailScreen extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: resultTypes.map(
+                (_types) {
+                  return Chip(
+                    avatar: CircleAvatar(
+                      child: Text('#'),
+                      backgroundColor: Colors.blueGrey,
+                    ),
+                    label: Text(_types),
+                  );
+                },
+              ).toList(),
+            ),
             buildSectionTitle(context, selectedAttraction.title),
             buildSectionText(context, selectedAttraction.shortDescr),
             buildSectionText(context, selectedAttraction.description),
-            Row(
-              children: [
-                //resultTypesWidgets
-                Chip(
-                  avatar: CircleAvatar(child: Text('#')),
-                  label: Text(resultTypes.toString()),
-                ),
-              ],
-            ),
           ],
         ),
       ),
