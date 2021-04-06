@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sochipark/dummy_data.dart';
+import '../widgets/wave_widget.dart';
 //import 'package:sochipark/models/types.dart';
 
 class AttractionDetailScreen extends StatelessWidget {
@@ -28,11 +29,9 @@ class AttractionDetailScreen extends StatelessWidget {
     );
   }
 
-//buildTypesList
-
   @override
   Widget build(BuildContext context) {
-    // final mediaQuery = MediaQuery.of(context);
+    final mq = MediaQuery.of(context);
     final _id =
         ModalRoute.of(context)!.settings.arguments as Map<String, String>;
     final attractionId = _id['id'];
@@ -57,7 +56,12 @@ class AttractionDetailScreen extends StatelessWidget {
         child: Column(
           children: [
             Stack(
-              children: [
+              children: <Widget>[
+                WaveWidget(
+                  size: mq.size,
+                  yOffset: mq.size.height / 3.0,
+                  color: Color.fromRGBO(180, 180, 255, 1),
+                ),
                 Container(
                   height: 300,
                   width: double.infinity,
