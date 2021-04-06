@@ -10,6 +10,7 @@ class AttractionDetailScreen extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: 10),
       child: Text(
         text,
+        //textAlign: TextAlign.left,
         style: Theme.of(context).textTheme.headline6,
       ),
     );
@@ -17,7 +18,7 @@ class AttractionDetailScreen extends StatelessWidget {
 
   Widget buildSectionText(BuildContext context, String text) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+      margin: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
       child: Text(
         text,
         style: Theme.of(context).textTheme.bodyText2,
@@ -55,27 +56,40 @@ class AttractionDetailScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              height: 300,
-              width: double.infinity,
-              child: Image.network(
-                selectedAttraction.imageUrl,
-                fit: BoxFit.cover,
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: resultTypes.map(
-                (_types) {
-                  return Chip(
-                    avatar: CircleAvatar(
-                      child: Text('#'),
-                      backgroundColor: Colors.blueGrey,
-                    ),
-                    label: Text(_types),
-                  );
-                },
-              ).toList(),
+            Stack(
+              children: [
+                Container(
+                  height: 300,
+                  width: double.infinity,
+                  child: Image.network(
+                    selectedAttraction.imageUrl,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: resultTypes.map(
+                    (_types) {
+                      return Container(
+                        padding: EdgeInsets.all(3),
+                        margin: EdgeInsets.all(3),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.white,
+                            width: 1,
+                          ),
+                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                        ),
+                        child: Text(
+                          '#$_types',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      );
+                    },
+                  ).toList(),
+                ),
+              ],
             ),
             buildSectionTitle(context, selectedAttraction.title),
             buildSectionText(context, selectedAttraction.shortDescr),

@@ -53,7 +53,7 @@ const DUMMY_ATTRACTIONS = const [
     id: 'at02',
     title: 'Змей Горыныч',
     imageUrl:
-        'https://www.sochipark.ru/upload/app/images/attractions/standard_980/zmei.jpg',
+        'https://www.sochipark.ru/upload/app/images/attractions/standard_980/zmei2.jpg',
     shortDescr:
         'На вершине высокой горы поселился огнедышащий Змей Горыныч. Собирайтесь в путь, если вы готовы отправиться в его логово!',
     description:
