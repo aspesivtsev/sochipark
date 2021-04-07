@@ -32,6 +32,7 @@ class AttractionDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);
+
     final _id =
         ModalRoute.of(context)!.settings.arguments as Map<String, String>;
     final attractionId = _id['id'];
@@ -57,17 +58,22 @@ class AttractionDetailScreen extends StatelessWidget {
           children: [
             Stack(
               children: <Widget>[
-                WaveWidget(
-                  size: mq.size,
-                  yOffset: mq.size.height / 3.0,
-                  color: Color.fromRGBO(180, 180, 255, 1),
-                ),
                 Container(
                   height: 300,
                   width: double.infinity,
                   child: Image.network(
                     selectedAttraction.imageUrl,
                     fit: BoxFit.cover,
+                  ),
+                ),
+                AnimatedPositioned(
+                  duration: Duration(milliseconds: 500),
+                  curve: Curves.easeOutQuad,
+                  top: 0.0,
+                  child: WaveWidget(
+                    size: mq.size,
+                    yOffset: mq.size.height / 3.0,
+                    color: Color.fromRGBO(180, 180, 255, 1),
                   ),
                 ),
                 Row(

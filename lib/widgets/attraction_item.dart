@@ -92,7 +92,7 @@ class AttractionItem extends StatelessWidget {
                     //color: Colors.black54,
                     padding: EdgeInsets.symmetric(vertical: 5, horizontal: 1),
                     decoration: BoxDecoration(
-                        color: Colors.black54,
+                        color: Colors.black45,
                         border: Border.all(
                           color: Colors.black,
                           width: 0.6,
