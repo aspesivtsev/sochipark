@@ -14,7 +14,7 @@ class MainDrawer extends StatelessWidget {
             padding: EdgeInsets.only(top: 30, left: 20),
             alignment: Alignment.center,
             color: Theme.of(context).accentColor,
-            child: Text(
+            child: const Text(
               'Волшебство начинается...',
               style: TextStyle(
                   //fontWeight: FontWeight.w900,
@@ -22,15 +22,15 @@ class MainDrawer extends StatelessWidget {
                   color: Colors.white),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.attractions,
               size: 24,
             ),
-            title: Text('Аттракционы',
+            title: const Text('Аттракционы',
                 style: TextStyle(
                   fontFamily: 'Montserrat',
                   fontSize: 22,
@@ -42,11 +42,11 @@ class MainDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.map,
               size: 24,
             ),
-            title: Text('Карта',
+            title: const Text('Карта',
                 style: TextStyle(
                   fontFamily: 'Montserrat',
                   fontSize: 22,
@@ -56,11 +56,11 @@ class MainDrawer extends StatelessWidget {
             onTap: () {},
           ),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.event,
               size: 24,
             ),
-            title: Text('Афиша',
+            title: const Text('Афиша',
                 style: TextStyle(
                   fontFamily: 'Montserrat',
                   fontSize: 22,

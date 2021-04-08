@@ -40,6 +40,7 @@ class _WaveWidgetState extends State<WaveWidget> with TickerProviderStateMixin {
               );
             }
           });
+    animationController.repeat();
   }
 
   @override

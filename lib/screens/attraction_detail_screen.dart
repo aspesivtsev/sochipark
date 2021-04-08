@@ -72,8 +72,8 @@ class AttractionDetailScreen extends StatelessWidget {
                   top: 0.0,
                   child: WaveWidget(
                     size: mq.size,
-                    yOffset: mq.size.height / 3.0,
-                    color: Color.fromRGBO(180, 180, 255, 1),
+                    yOffset: mq.size.height / 2.45,
+                    color: Colors.white,
                   ),
                 ),
                 Row(
@@ -89,7 +89,8 @@ class AttractionDetailScreen extends StatelessWidget {
                             color: Colors.white,
                             width: 1,
                           ),
-                          borderRadius: BorderRadius.all(Radius.circular(10)),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(10)),
                         ),
                         child: Text(
                           '#$_types',
