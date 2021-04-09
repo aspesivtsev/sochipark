@@ -8,7 +8,7 @@ class AttractionDetailScreen extends StatelessWidget {
 
   Widget buildSectionTitle(BuildContext context, String text) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       child: Text(
         text,
         //textAlign: TextAlign.left,
@@ -19,12 +19,31 @@ class AttractionDetailScreen extends StatelessWidget {
 
   Widget buildSectionText(BuildContext context, String text) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+      margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
       child: Text(
         text,
         style: Theme.of(context).textTheme.bodyText2,
         softWrap: true,
         textAlign: TextAlign.justify,
+      ),
+    );
+  }
+
+  Widget buildItemWithIcon(
+      BuildContext context, String bodyText, IconData icon, Color iconColor) {
+    return ListTile(
+      leading: CircleAvatar(
+        backgroundColor: iconColor,
+        radius: 30,
+        child: Padding(
+          padding: const EdgeInsets.all(0),
+          child: FittedBox(
+            child: Icon(
+              icon,
+              size: 24,
+            ),
+          ),
+        ),
       ),
     );
   }
@@ -105,6 +124,8 @@ class AttractionDetailScreen extends StatelessWidget {
             buildSectionTitle(context, selectedAttraction.title),
             buildSectionText(context, selectedAttraction.shortDescr),
             buildSectionText(context, selectedAttraction.description),
+            buildItemWithIcon(
+                context, selectedAttraction.specs, Icons.settings, Colors.pink)
           ],
         ),
       ),
