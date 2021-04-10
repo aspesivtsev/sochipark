@@ -34,17 +34,19 @@ class AttractionDetailScreen extends StatelessWidget {
     return ListTile(
       leading: CircleAvatar(
         backgroundColor: iconColor,
-        radius: 30,
+        radius: 20,
         child: Padding(
           padding: const EdgeInsets.all(0),
           child: FittedBox(
             child: Icon(
               icon,
-              size: 24,
+              size: 25,
+              color: Colors.white,
             ),
           ),
         ),
       ),
+      title: Text(bodyText),
     );
   }
 
@@ -78,20 +80,22 @@ class AttractionDetailScreen extends StatelessWidget {
             Stack(
               children: <Widget>[
                 Container(
-                  height: 300,
-                  width: double.infinity,
-                  child: Image.network(
-                    selectedAttraction.imageUrl,
-                    fit: BoxFit.cover,
-                  ),
-                ),
+                    height: 300,
+                    width: double.infinity,
+                    child: LayoutBuilder(builder: (ctx, constraints) {
+                      return Image.network(
+                        selectedAttraction.imageUrl,
+                        fit: BoxFit.cover,
+                      );
+                    })),
                 AnimatedPositioned(
                   duration: Duration(milliseconds: 500),
                   curve: Curves.easeOutQuad,
                   top: 0.0,
                   child: WaveWidget(
                     size: mq.size,
-                    yOffset: mq.size.height / 2.45,
+                    yOffset: 280,
+                    //yOffset: mq.size.height / 4.0,
                     color: Colors.white,
                   ),
                 ),
@@ -124,8 +128,36 @@ class AttractionDetailScreen extends StatelessWidget {
             buildSectionTitle(context, selectedAttraction.title),
             buildSectionText(context, selectedAttraction.shortDescr),
             buildSectionText(context, selectedAttraction.description),
-            buildItemWithIcon(
-                context, selectedAttraction.specs, Icons.settings, Colors.pink)
+            Card(
+              elevation: 2,
+              margin: EdgeInsets.all(20),
+              child: Container(
+                padding: EdgeInsets.all(5),
+                child: Column(
+                  children: <Widget>[
+                    buildItemWithIcon(context, selectedAttraction.workTime,
+                        Icons.access_time, Colors.green),
+                    buildItemWithIcon(context, selectedAttraction.specs,
+                        Icons.settings, Colors.blueGrey),
+                    buildItemWithIcon(
+                        context,
+                        '${selectedAttraction.age.toString()} лет минималочка! :-)',
+                        Icons.accessibility_new,
+                        Colors.blueGrey),
+                    buildItemWithIcon(
+                        context,
+                        selectedAttraction.height.toString(),
+                        Icons.height,
+                        Colors.blueGrey),
+                    buildItemWithIcon(
+                        context,
+                        selectedAttraction.withAdults.toString(),
+                        Icons.people,
+                        Colors.blueGrey)
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
