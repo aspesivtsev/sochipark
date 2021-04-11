@@ -129,7 +129,7 @@ class AttractionDetailScreen extends StatelessWidget {
             buildSectionText(context, selectedAttraction.shortDescr),
             buildSectionText(context, selectedAttraction.description),
             Card(
-              elevation: 2,
+              elevation: 5,
               margin: EdgeInsets.all(20),
               child: Container(
                 padding: EdgeInsets.all(5),
@@ -153,7 +153,9 @@ class AttractionDetailScreen extends StatelessWidget {
                         context,
                         selectedAttraction.withAdults.toString(),
                         Icons.people,
-                        Colors.blueGrey)
+                        Colors.blueGrey),
+                    buildItemWithIcon(context, selectedAttraction.location,
+                        Icons.public, Colors.blueGrey),
                   ],
                 ),
               ),
