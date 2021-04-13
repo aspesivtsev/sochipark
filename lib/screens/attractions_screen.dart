@@ -4,7 +4,7 @@ import '../widgets/main_drawer.dart';
 import '../dummy_data.dart';
 
 class AttractionsScreen extends StatelessWidget {
-  static const routName = '/attractions';
+  static const routeName = '/attractions';
   //final image not to rebuil it
   final Image titleImage = Image.asset(
     'assets/images/sochipark_logo_small-white.png',

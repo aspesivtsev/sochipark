@@ -8,11 +8,12 @@ class AttractionDetailScreen extends StatelessWidget {
 
   Widget buildSectionTitle(BuildContext context, String text) {
     return Container(
-      margin: const EdgeInsets.symmetric(vertical: 10),
+      alignment: Alignment.centerLeft,
+      margin: const EdgeInsets.only(top: 25, bottom: 10, left: 15, right: 15),
       child: Text(
         text,
-        //textAlign: TextAlign.left,
-        style: Theme.of(context).textTheme.headline6,
+        textAlign: TextAlign.left,
+        style: Theme.of(context).textTheme.headline3,
       ),
     );
   }
@@ -21,10 +22,10 @@ class AttractionDetailScreen extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
       child: Text(
-        text,
+        '$text',
         style: Theme.of(context).textTheme.bodyText2,
         softWrap: true,
-        textAlign: TextAlign.justify,
+        textAlign: TextAlign.start,
       ),
     );
   }
@@ -40,7 +41,7 @@ class AttractionDetailScreen extends StatelessWidget {
           child: FittedBox(
             child: Icon(
               icon,
-              size: 25,
+              size: 30,
               color: Colors.white,
             ),
           ),
@@ -129,33 +130,34 @@ class AttractionDetailScreen extends StatelessWidget {
             buildSectionText(context, selectedAttraction.shortDescr),
             buildSectionText(context, selectedAttraction.description),
             Card(
-              elevation: 5,
-              margin: EdgeInsets.all(20),
+              shadowColor: Colors.deepPurple,
+              elevation: 8,
+              margin: EdgeInsets.all(40),
               child: Container(
                 padding: EdgeInsets.all(5),
                 child: Column(
                   children: <Widget>[
                     buildItemWithIcon(context, selectedAttraction.workTime,
-                        Icons.access_time, Colors.green),
+                        Icons.access_time, Colors.teal),
                     buildItemWithIcon(context, selectedAttraction.specs,
-                        Icons.settings, Colors.blueGrey),
+                        Icons.settings, Colors.orange),
                     buildItemWithIcon(
                         context,
-                        '${selectedAttraction.age.toString()} лет минималочка! :-)',
+                        'Посещение от ${selectedAttraction.age.toString()} лет',
                         Icons.accessibility_new,
-                        Colors.blueGrey),
+                        Colors.pink),
                     buildItemWithIcon(
                         context,
-                        selectedAttraction.height.toString(),
+                        'Минимальный рост ${selectedAttraction.height.toString()} см',
                         Icons.height,
-                        Colors.blueGrey),
+                        Colors.pink),
                     buildItemWithIcon(
                         context,
                         selectedAttraction.withAdults.toString(),
                         Icons.people,
-                        Colors.blueGrey),
+                        Colors.green),
                     buildItemWithIcon(context, selectedAttraction.location,
-                        Icons.public, Colors.blueGrey),
+                        Icons.location_pin, Colors.indigo),
                   ],
                 ),
               ),

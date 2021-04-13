@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 //import './widgets/main_drawer.dart';
 import './screens/attractions_screen.dart';
 import './screens/attraction_detail_screen.dart';
+import './screens/contacts_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,24 +21,33 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
           fontFamily: 'Tavolga',
           textTheme: ThemeData.light().textTheme.copyWith(
-              bodyText2: const TextStyle(
-                color: Color.fromRGBO(20, 51, 51, 1),
-                fontSize: 18,
-              ),
-              bodyText1: TextStyle(
-                color: Color.fromRGBO(20, 51, 51, 1),
-              ),
-              headline6: const TextStyle(
-                fontSize: 26,
-                fontFamily: 'Tavolga',
-                fontWeight: FontWeight.bold,
-              ))),
+                bodyText2: const TextStyle(
+                  color: Color.fromRGBO(20, 51, 51, 1),
+                  fontSize: 16,
+                ),
+                bodyText1: TextStyle(
+                  color: Color.fromRGBO(20, 51, 51, 1),
+                ),
+                headline6: const TextStyle(
+                  fontSize: 26,
+                  fontFamily: 'Tavolga',
+                  fontWeight: FontWeight.bold,
+                ),
+                headline3: const TextStyle(
+                  //color: Colors.deepPurple,
+                  color: Color(0xFF342C81),
+                  fontSize: 26,
+                  fontFamily: 'Tavolga',
+                  fontWeight: FontWeight.bold,
+                ),
+              )),
       //home: MyHomePage(),
       initialRoute: '/',
       routes: {
         '/': (ctx) => AttractionsScreen(),
-        AttractionsScreen.routName: (ctx) => AttractionsScreen(),
+        AttractionsScreen.routeName: (ctx) => AttractionsScreen(),
         AttractionDetailScreen.routeName: (ctx) => AttractionDetailScreen(),
+        ContactsScreen.routeName: (ctx) => ContactsScreen(),
       },
       onUnknownRoute: (settings) {
         //if all the routes fail it will show the main screen

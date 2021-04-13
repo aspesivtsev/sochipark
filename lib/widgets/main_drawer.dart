@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../screens/attractions_screen.dart';
+import '../screens/contacts_screen.dart';
 
 class MainDrawer extends StatelessWidget {
   @override
@@ -38,7 +39,7 @@ class MainDrawer extends StatelessWidget {
                 //fontWeight: FontWeight.bold),
                 ),
             onTap: () {
-              AttractionsScreen();
+              Navigator.of(context).pushNamed(AttractionsScreen.routeName);
             },
           ),
           ListTile(
@@ -68,6 +69,22 @@ class MainDrawer extends StatelessWidget {
                 //fontWeight: FontWeight.bold),
                 ),
             onTap: () {},
+          ),
+          ListTile(
+            leading: const Icon(
+              Icons.contact_page,
+              size: 24,
+            ),
+            title: const Text('Контакты',
+                style: TextStyle(
+                  fontFamily: 'Montserrat',
+                  fontSize: 22,
+                )
+                //fontWeight: FontWeight.bold),
+                ),
+            onTap: () {
+              Navigator.of(context).pushNamed(ContactsScreen.routeName);
+            },
           ),
         ],
       ),
