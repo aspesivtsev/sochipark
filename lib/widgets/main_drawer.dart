@@ -39,7 +39,8 @@ class MainDrawer extends StatelessWidget {
                 //fontWeight: FontWeight.bold),
                 ),
             onTap: () {
-              Navigator.of(context).pushNamed(AttractionsScreen.routeName);
+              Navigator.of(context)
+                  .popAndPushNamed(AttractionsScreen.routeName);
             },
           ),
           ListTile(
@@ -83,7 +84,7 @@ class MainDrawer extends StatelessWidget {
                 //fontWeight: FontWeight.bold),
                 ),
             onTap: () {
-              Navigator.of(context).pushNamed(ContactsScreen.routeName);
+              Navigator.of(context).popAndPushNamed(ContactsScreen.routeName);
             },
           ),
         ],
