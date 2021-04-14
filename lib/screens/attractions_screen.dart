@@ -39,38 +39,40 @@ class AttractionsScreen extends StatelessWidget {
         ),
       ),
       drawer: MainDrawer(),
-      body: Container(
-        decoration: const BoxDecoration(
-          color: const Color(0xFFEEEEEE),
-          //color: const Color.fromRGBO(180, 180, 255, 1),
-          //color: Colors.grey,
-          /*gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [Colors.lightGreen, Color.fromRGBO(255, 238, 165, 1)]),
-          //colors: [Color.fromRGBO(83, 33, 168, 0.1), Colors.white]),*/
-        ),
-        child: ListView.builder(
-          itemBuilder: (ctx, index) {
-            return AttractionItem(
-              id: attractions[index].id,
-              title: attractions[index].title,
-              imageUrl: attractions[index].imageUrl,
-              shortDescr: attractions[index].shortDescr,
-              description: attractions[index].description,
-              types: attractions[index].types,
-              workTime: attractions[index].workTime,
-              age: attractions[index].age,
-              height: attractions[index].height,
-              location: attractions[index].location,
-              withAdults: attractions[index].withAdults,
-              isPurchasedSeparately: attractions[index].isPurchasedSeparately,
-              specs: attractions[index].specs,
-              isActive: attractions[index].isActive,
-              sorting: attractions[index].sorting,
-            );
-          },
-          itemCount: attractions.length,
+      body: SafeArea(
+        child: Container(
+          decoration: const BoxDecoration(
+            color: const Color(0xFFEEEEEE),
+            //color: const Color.fromRGBO(180, 180, 255, 1),
+            //color: Colors.grey,
+            /*gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [Colors.lightGreen, Color.fromRGBO(255, 238, 165, 1)]),
+            //colors: [Color.fromRGBO(83, 33, 168, 0.1), Colors.white]),*/
+          ),
+          child: ListView.builder(
+            itemBuilder: (ctx, index) {
+              return AttractionItem(
+                id: attractions[index].id,
+                title: attractions[index].title,
+                imageUrl: attractions[index].imageUrl,
+                shortDescr: attractions[index].shortDescr,
+                description: attractions[index].description,
+                types: attractions[index].types,
+                workTime: attractions[index].workTime,
+                age: attractions[index].age,
+                height: attractions[index].height,
+                location: attractions[index].location,
+                withAdults: attractions[index].withAdults,
+                isPurchasedSeparately: attractions[index].isPurchasedSeparately,
+                specs: attractions[index].specs,
+                isActive: attractions[index].isActive,
+                sorting: attractions[index].sorting,
+              );
+            },
+            itemCount: attractions.length,
+          ),
         ),
       ),
     );
