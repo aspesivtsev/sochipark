@@ -50,7 +50,7 @@ class AttractionItem extends StatelessWidget {
         color: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         elevation: 6,
-        margin: EdgeInsets.all(10),
+        margin: EdgeInsets.all(8), //width between cards
         child: Column(
           children: <Widget>[
             Stack(

@@ -41,8 +41,9 @@ class AttractionsScreen extends StatelessWidget {
       drawer: MainDrawer(),
       body: Container(
         decoration: const BoxDecoration(
+          color: const Color(0xFFEEEEEE),
           //color: const Color.fromRGBO(180, 180, 255, 1),
-          color: Colors.grey,
+          //color: Colors.grey,
           /*gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
