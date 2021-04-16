@@ -1,7 +1,26 @@
+//import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ContactsScreen extends StatelessWidget {
   static const routeName = '/contacts';
+  static const bogatyr_url = 'https://bogatyr-castle.ru';
+  static const tel = 'tel:88001003339';
+  //static const _email = '';
+
+  void _launchURL(String _url) async => await canLaunch(_url)
+      ? await launch(_url)
+      : throw 'Could not launch $_url';
+
+  final Uri _emailLaunchUri = Uri(
+      scheme: 'mailto',
+      path: 'smith@example.com',
+      queryParameters: {'subject': 'App request'});
+
+// ...
+
+// mailto:smith@example.com?subject=Example+Subject+%26+Symbols+are+allowed%21
 
   Widget buildSectionTitle(BuildContext context, String text) {
     return Container(
@@ -41,6 +60,18 @@ class ContactsScreen extends StatelessWidget {
               'Россия, г. Сочи, Адлерский район, Имеретинская низменность, Олимпийский проспект, 21'),
           buildSectionText(context,
               'Call-центр тематического парка «Сочи Парк» и гостиничного комплекса «Богатырь»: \n8 800 100 33 39'),
+          ElevatedButton(
+            onPressed: () => _launchURL(bogatyr_url),
+            child: Text('перейти на сайт Богатыря!'),
+          ),
+          TextButton(
+            onPressed: () => launch(_emailLaunchUri.toString()),
+            child: Text('отправить письмо!'),
+          ),
+          ElevatedButton(
+            onPressed: () => _launchURL(tel),
+            child: Text('позвонить 8 800'),
+          ),
         ],
       )),
     );
