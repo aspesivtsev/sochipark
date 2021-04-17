@@ -16,10 +16,11 @@ class AttractionsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     //final routeArgs =
     //  ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
-
+//getting all the active attractions and sorting them according to sorting field
     final attractions = DUMMY_ATTRACTIONS.where((attraction) {
       return attraction.isActive == true;
     }).toList();
+    attractions.sort((a, b) => a.sorting.compareTo(b.sorting));
 
     return Scaffold(
       appBar: AppBar(
@@ -68,6 +69,7 @@ class AttractionsScreen extends StatelessWidget {
                 isPurchasedSeparately: attractions[index].isPurchasedSeparately,
                 specs: attractions[index].specs,
                 isActive: attractions[index].isActive,
+                isWorking: attractions[index].isWorking,
                 sorting: attractions[index].sorting,
               );
             },

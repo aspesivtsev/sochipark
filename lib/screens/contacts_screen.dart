@@ -55,6 +55,12 @@ class ContactsScreen extends StatelessWidget {
       body: SafeArea(
           child: Column(
         children: [
+          Image.asset(
+            'assets/images/park.jpg',
+            height: 180,
+            width: double.infinity,
+            fit: BoxFit.cover,
+          ),
           buildSectionTitle(context, 'Как добраться'),
           buildSectionText(context,
               'Россия, г. Сочи, Адлерский район, Имеретинская низменность, Олимпийский проспект, 21'),
@@ -63,14 +69,19 @@ class ContactsScreen extends StatelessWidget {
           ElevatedButton(
             onPressed: () => _launchURL(bogatyr_url),
             child: Text('перейти на сайт Богатыря!'),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.lightGreen, // background
+              onPrimary: Colors.white, // foreground
+            ),
           ),
           TextButton(
             onPressed: () => launch(_emailLaunchUri.toString()),
-            child: Text('отправить письмо!'),
+            child: Text('отправить письмо!',
+                style: TextStyle(color: Theme.of(context).accentColor)),
           ),
           ElevatedButton(
             onPressed: () => _launchURL(tel),
-            child: Text('позвонить 8 800'),
+            child: Text('позвонить  справочную'),
           ),
         ],
       )),

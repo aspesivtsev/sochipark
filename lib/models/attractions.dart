@@ -13,6 +13,7 @@ class Attraction {
   final bool isPurchasedSeparately;
   final String specs;
   final bool isActive;
+  final bool isWorking;
   final int sorting;
 
   const Attraction(
@@ -30,6 +31,7 @@ class Attraction {
       required this.isPurchasedSeparately,
       required this.specs,
       required this.isActive,
+      required this.isWorking,
       required this.sorting});
 }
 

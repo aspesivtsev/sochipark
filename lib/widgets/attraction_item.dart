@@ -17,6 +17,7 @@ class AttractionItem extends StatelessWidget {
   final bool isPurchasedSeparately;
   final String specs;
   final bool isActive;
+  final bool isWorking;
   final int sorting;
 
   AttractionItem({
@@ -34,6 +35,7 @@ class AttractionItem extends StatelessWidget {
     required this.isPurchasedSeparately,
     required this.specs,
     required this.isActive,
+    required this.isWorking,
     required this.sorting,
   });
 

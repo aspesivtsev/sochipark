@@ -47,6 +47,7 @@ const DUMMY_ATTRACTIONS = const [
     isPurchasedSeparately: false,
     specs: '32 посадочных места, 105 км/ч, 58 метров, 1 в России, 6 в мире',
     isActive: true,
+    isWorking: true,
     sorting: 50,
   ),
   Attraction(
@@ -70,6 +71,7 @@ const DUMMY_ATTRACTIONS = const [
     isPurchasedSeparately: false,
     specs: '1056 м, 105 км/ч, 20 посадочных мест',
     isActive: true,
+    isWorking: true,
     sorting: 50,
   ),
   Attraction(
@@ -91,6 +93,7 @@ const DUMMY_ATTRACTIONS = const [
     isPurchasedSeparately: false,
     specs: '65 метров, 21 км/ч, 20 посадочных мест',
     isActive: true,
+    isWorking: false,
     sorting: 50,
   ),
   Attraction(
@@ -112,6 +115,7 @@ const DUMMY_ATTRACTIONS = const [
     isPurchasedSeparately: false,
     specs: '45 км/ч, 408 м, 4 вагона, 16 посадочных мест',
     isActive: true,
+    isWorking: false,
     sorting: 50,
   ),
   Attraction(
@@ -133,7 +137,8 @@ const DUMMY_ATTRACTIONS = const [
     specs:
         '60 метров, 24 кабины, 144 места. Последний прокат осуществляется не позднее, чем за 15 минут до окончания работы аттракциона',
     isActive: true,
-    sorting: 50,
+    isWorking: true,
+    sorting: 49,
   ),
 ];
 

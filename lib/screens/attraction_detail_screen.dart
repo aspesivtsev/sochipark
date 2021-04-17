@@ -64,6 +64,7 @@ class AttractionDetailScreen extends StatelessWidget {
     //_sample.asMap().forEach((index, value) => DUMMY_TYPES.firstWhere((_type) => _type.id == value));
     final List resultTypes = [];
 
+//parsing the types of the attraction
     for (String ctype in _sample) {
       final resultName = DUMMY_TYPES.firstWhere((_type) => _type.id == ctype);
       resultTypes.add(resultName.title);
@@ -89,6 +90,7 @@ class AttractionDetailScreen extends StatelessWidget {
                         fit: BoxFit.cover,
                       );
                     })),
+                //wave animation
                 AnimatedPositioned(
                   duration: Duration(milliseconds: 500),
                   curve: Curves.easeOutQuad,
@@ -100,6 +102,7 @@ class AttractionDetailScreen extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
+                //adding type lables on picture
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.end,
