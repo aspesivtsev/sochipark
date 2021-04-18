@@ -15,7 +15,7 @@ class ContactsScreen extends StatelessWidget {
 
   final Uri _emailLaunchUri = Uri(
       scheme: 'mailto',
-      path: 'smith@example.com',
+      path: 'reservations@sochi-park.ru',
       queryParameters: {'subject': 'App request'});
 
 // ...
@@ -54,6 +54,7 @@ class ContactsScreen extends StatelessWidget {
       ),
       body: SafeArea(
           child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Image.asset(
             'assets/images/park.jpg',
@@ -65,7 +66,15 @@ class ContactsScreen extends StatelessWidget {
           buildSectionText(context,
               'Россия, г. Сочи, Адлерский район, Имеретинская низменность, Олимпийский проспект, 21'),
           buildSectionText(context,
-              'Call-центр тематического парка «Сочи Парк» и гостиничного комплекса «Богатырь»: \n8 800 100 33 39'),
+              'Call-центр тематического парка «Сочи Парк» и гостиничного комплекса «Богатырь»:'),
+          ElevatedButton(
+            onPressed: () => _launchURL(tel),
+            child: Text('8 800 100 33 39'),
+            style: ElevatedButton.styleFrom(
+              primary: Colors.lightGreen, // background
+              onPrimary: Colors.white, // foreground
+            ),
+          ),
           ElevatedButton(
             onPressed: () => _launchURL(bogatyr_url),
             child: Text('перейти на сайт Богатыря!'),
@@ -78,10 +87,6 @@ class ContactsScreen extends StatelessWidget {
             onPressed: () => launch(_emailLaunchUri.toString()),
             child: Text('отправить письмо!',
                 style: TextStyle(color: Theme.of(context).accentColor)),
-          ),
-          ElevatedButton(
-            onPressed: () => _launchURL(tel),
-            child: Text('позвонить  справочную'),
           ),
         ],
       )),

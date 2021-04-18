@@ -138,7 +138,7 @@ const DUMMY_ATTRACTIONS = const [
         '60 метров, 24 кабины, 144 места. Последний прокат осуществляется не позднее, чем за 15 минут до окончания работы аттракциона',
     isActive: true,
     isWorking: true,
-    sorting: 49,
+    sorting: 50,
   ),
 ];
 

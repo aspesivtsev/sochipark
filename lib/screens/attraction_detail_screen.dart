@@ -159,6 +159,13 @@ class AttractionDetailScreen extends StatelessWidget {
                         selectedAttraction.withAdults.toString(),
                         Icons.people,
                         Colors.green),
+                    buildItemWithIcon(
+                        context,
+                        selectedAttraction.isPurchasedSeparately
+                            ? 'Билет покупается отдельно. Не входит в стоимость посещения парка.'
+                            : 'Входит в стоимость посещения парка',
+                        Icons.request_page_outlined,
+                        Colors.blueAccent),
                     buildItemWithIcon(context, selectedAttraction.location,
                         Icons.location_pin, Colors.indigo),
                   ],

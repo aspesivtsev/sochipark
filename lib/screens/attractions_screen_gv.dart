@@ -66,6 +66,7 @@ class AttractionsScreenGV extends StatelessWidget {
                     isPurchasedSeparately: attrData.isPurchasedSeparately,
                     specs: attrData.specs,
                     isActive: attrData.isActive,
+                    isWorking: attrData.isWorking,
                     sorting: attrData.sorting,
                   ))
               .toList(),
