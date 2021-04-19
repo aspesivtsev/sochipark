@@ -134,8 +134,8 @@ class AttractionDetailScreen extends StatelessWidget {
             buildSectionText(context, selectedAttraction.description),
             Card(
               shadowColor: Colors.deepPurple,
-              elevation: 8,
-              margin: EdgeInsets.all(40),
+              elevation: 6,
+              margin: EdgeInsets.all(25),
               child: Container(
                 padding: EdgeInsets.all(5),
                 child: Column(
@@ -168,10 +168,25 @@ class AttractionDetailScreen extends StatelessWidget {
                         Colors.blueAccent),
                     buildItemWithIcon(context, selectedAttraction.location,
                         Icons.location_pin, Colors.indigo),
-                    IconButton(
-                      icon: const Icon(Icons.android),
-                      color: Colors.pink,
-                      onPressed: () {},
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        IconButton(
+                          icon: const Icon(Icons.android),
+                          color: Colors.lightBlue,
+                          onPressed: () {},
+                        ),
+                        IconButton(
+                          icon: const Icon(Icons.android),
+                          color: Colors.lightBlue,
+                          onPressed: () {},
+                        ),
+                        IconButton(
+                          icon: const Icon(Icons.android),
+                          color: Colors.lightBlue,
+                          onPressed: () {},
+                        ),
+                      ],
                     ),
                   ],
                 ),
