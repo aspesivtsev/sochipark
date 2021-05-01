@@ -5,14 +5,28 @@ class SocialShare extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: Row(
-      children: [
-        Icon(
-          Icons.android,
-          size: 30,
-          color: Colors.white,
-        ),
-      ],
-    ));
+      padding: EdgeInsets.all(20),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          IconButton(
+            icon: const Icon(Icons.share),
+            iconSize: 30,
+            color: Colors.deepPurple,
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: const Icon(Icons.android),
+            color: Colors.deepPurple,
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: const Icon(Icons.android),
+            color: Colors.deepPurple,
+            onPressed: () {},
+          ),
+        ],
+      ),
+    );
   }
 }

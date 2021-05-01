@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import './screens/attractions_screen.dart';
 import './screens/attraction_detail_screen.dart';
 import './screens/contacts_screen.dart';
+import './screens/calendar_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -48,6 +49,7 @@ class MyApp extends StatelessWidget {
         AttractionsScreen.routeName: (ctx) => AttractionsScreen(),
         AttractionDetailScreen.routeName: (ctx) => AttractionDetailScreen(),
         ContactsScreen.routeName: (ctx) => ContactsScreen(),
+        EventsCalendar.routeName: (ctx) => EventsCalendar(),
       },
       onUnknownRoute: (settings) {
         //if all the routes fail it will show the main screen

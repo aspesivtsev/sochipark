@@ -168,26 +168,6 @@ class AttractionDetailScreen extends StatelessWidget {
                         Colors.blueAccent),
                     buildItemWithIcon(context, selectedAttraction.location,
                         Icons.location_pin, Colors.indigo),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        IconButton(
-                          icon: const Icon(Icons.android),
-                          color: Colors.lightBlue,
-                          onPressed: () {},
-                        ),
-                        IconButton(
-                          icon: const Icon(Icons.android),
-                          color: Colors.lightBlue,
-                          onPressed: () {},
-                        ),
-                        IconButton(
-                          icon: const Icon(Icons.android),
-                          color: Colors.lightBlue,
-                          onPressed: () {},
-                        ),
-                      ],
-                    ),
                   ],
                 ),
               ),
