@@ -78,6 +78,22 @@ class MainDrawer extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(
+                Icons.event,
+                size: 24,
+              ),
+              title: const Text('Афиша мероприятий',
+                  style: TextStyle(
+                    fontFamily: 'Montserrat',
+                    fontSize: 22,
+                  )
+                  //fontWeight: FontWeight.bold),
+                  ),
+              onTap: () {
+                Navigator.of(context).popAndPushNamed(EventsCalendar.routeName);
+              },
+            ),
+            ListTile(
+              leading: const Icon(
                 Icons.map,
                 size: 24,
               ),
@@ -89,22 +105,6 @@ class MainDrawer extends StatelessWidget {
                   //fontWeight: FontWeight.bold),
                   ),
               onTap: () {},
-            ),
-            ListTile(
-              leading: const Icon(
-                Icons.event,
-                size: 24,
-              ),
-              title: const Text('Афиша',
-                  style: TextStyle(
-                    fontFamily: 'Montserrat',
-                    fontSize: 22,
-                  )
-                  //fontWeight: FontWeight.bold),
-                  ),
-              onTap: () {
-                Navigator.of(context).popAndPushNamed(EventsCalendar.routeName);
-              },
             ),
             ListTile(
               leading: const Icon(
