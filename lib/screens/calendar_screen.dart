@@ -44,7 +44,7 @@ class _EventsCalendarState extends State<EventsCalendar> {
               todayTextStyle:
                   TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
               todayDecoration: BoxDecoration(
-                color: Colors.deepPurple.shade400,
+                color: Colors.lightGreen.shade400,
                 //borderRadius: BorderRadius.circular(5),
                 border: Border.all(
                   color: Colors.green,

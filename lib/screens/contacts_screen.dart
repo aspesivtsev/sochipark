@@ -1,5 +1,5 @@
 //import 'dart:async';
-
+import 'dart:core';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../widgets/social_share.dart';
@@ -10,7 +10,7 @@ class ContactsScreen extends StatelessWidget {
   static const tel = 'tel:88001003339';
   static const telBg = 'tel:+78622417777';
   //TODO: give the correct coordinates for sochipark location below
-  static const yandexMapUrl = 'www.yandex.ru/33.33.33.33';
+  static const yandexMapUrl = 'https://yandex.ru/maps/-/CCU4iUTHsC';
   //static const _email = '';
 
   void _launchURL(String _url) async => await canLaunch(_url)
