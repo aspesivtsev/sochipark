@@ -3,6 +3,7 @@ import '../screens/attractions_screen.dart';
 import '../screens/contacts_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../screens/calendar_screen.dart';
+import '../screens/terminal_screen.dart';
 
 class MainDrawer extends StatelessWidget {
   static const buyUrl = 'https://www.sochipark.ru/tickets/?tab=ONLINE';
@@ -10,8 +11,8 @@ class MainDrawer extends StatelessWidget {
       ? await launch(_url)
       : throw 'Could not launch $_url';
 
-//TODO: need to edit the builder in order to pass the Function to action variable of the buildListTile, now it crashes
-  Widget buildListTile(String title, IconData icon, Future action) {
+  Widget buildListTile(
+      final String title, final IconData icon, final VoidCallback tapAction) {
     return ListTile(
       leading: Icon(
         icon,
@@ -24,7 +25,7 @@ class MainDrawer extends StatelessWidget {
           )
           //fontWeight: FontWeight.bold),
           ),
-      onTap: () => action,
+      onTap: tapAction,
     );
   }
 
@@ -52,14 +53,17 @@ class MainDrawer extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            /*
-            //this is a buidListTile
-            buildListTile(
-                'Аттракционы',
-                Icons.attractions,
-                Navigator.of(context)
-                    .popAndPushNamed(AttractionsScreen.routeName)),*/
-            ListTile(
+
+            buildListTile('Аттракционы', Icons.attractions, () {
+              Navigator.of(context)
+                  .popAndPushNamed(AttractionsScreen.routeName);
+            }),
+            buildListTile('Терминал', Icons.dashboard, () {
+              Navigator.of(context).popAndPushNamed(TerminalScreen.routeName);
+            }),
+
+            //this is old variant of list
+            /*ListTile(
               leading: const Icon(
                 Icons.attractions,
                 size: 24,
@@ -75,7 +79,8 @@ class MainDrawer extends StatelessWidget {
                 Navigator.of(context)
                     .popAndPushNamed(AttractionsScreen.routeName);
               },
-            ),
+            ),*/
+            //TODO: fix the items below
             ListTile(
               leading: const Icon(
                 Icons.event,

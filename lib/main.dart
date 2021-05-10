@@ -4,6 +4,8 @@ import './screens/attractions_screen.dart';
 import './screens/attraction_detail_screen.dart';
 import './screens/contacts_screen.dart';
 import './screens/calendar_screen.dart';
+import './screens/terminal_screen.dart';
+
 import 'package:intl/date_symbol_data_local.dart';
 
 void main() {
@@ -52,6 +54,7 @@ class MyApp extends StatelessWidget {
         AttractionDetailScreen.routeName: (ctx) => AttractionDetailScreen(),
         ContactsScreen.routeName: (ctx) => ContactsScreen(),
         EventsCalendar.routeName: (ctx) => EventsCalendar(),
+        TerminalScreen.routeName: (ctx) => TerminalScreen(),
       },
       onUnknownRoute: (settings) {
         //if all the routes fail it will show the main screen
