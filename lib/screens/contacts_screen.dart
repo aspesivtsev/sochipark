@@ -10,7 +10,8 @@ class ContactsScreen extends StatelessWidget {
   static const tel = 'tel:88001003339';
   static const telBg = 'tel:+78622417777';
   //TODO: give the correct coordinates for sochipark location below
-  static const yandexMapUrl = 'https://yandex.ru/maps/-/CCU4iUTHsC';
+  //static const yandexMapUrl = 'https://yandex.ru/maps/-/CCU4iUTHsC';
+  static const yandexMapUrl = 'https://yandex.ru/maps/-/CCU45RA5XD';
   //static const _email = '';
 
   void _launchURL(String _url) async => await canLaunch(_url)

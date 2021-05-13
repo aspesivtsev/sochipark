@@ -35,14 +35,16 @@ class _EventsCalendarState extends State<EventsCalendar> {
                 ),
               ),
               selectedTextStyle: TextStyle(
-                  fontSize: 22,
+                  fontSize: 24,
                   fontWeight: FontWeight.bold,
                   color: Colors.white),
               holidayDecoration: BoxDecoration(
                 color: Colors.blueGrey,
               ),
-              todayTextStyle:
-                  TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+              todayTextStyle: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  fontSize: 20),
               todayDecoration: BoxDecoration(
                 color: Colors.lightGreen.shade400,
                 //borderRadius: BorderRadius.circular(5),

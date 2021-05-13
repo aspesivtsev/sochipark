@@ -16,12 +16,12 @@ class MainDrawer extends StatelessWidget {
     return ListTile(
       leading: Icon(
         icon,
-        size: 24,
+        size: 26,
       ),
       title: Text(title,
           style: TextStyle(
             fontFamily: 'Montserrat',
-            fontSize: 22,
+            fontSize: 18,
           )
           //fontWeight: FontWeight.bold),
           ),
@@ -53,7 +53,6 @@ class MainDrawer extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-
             buildListTile('Аттракционы', Icons.attractions, () {
               Navigator.of(context)
                   .popAndPushNamed(AttractionsScreen.routeName);
@@ -61,72 +60,13 @@ class MainDrawer extends StatelessWidget {
             buildListTile('Терминал', Icons.dashboard, () {
               Navigator.of(context).popAndPushNamed(TerminalScreen.routeName);
             }),
-
-            //this is old variant of list
-            /*ListTile(
-              leading: const Icon(
-                Icons.attractions,
-                size: 24,
-              ),
-              title: const Text('Аттракционы',
-                  style: TextStyle(
-                    fontFamily: 'Montserrat',
-                    fontSize: 22,
-                  )
-                  //fontWeight: FontWeight.bold),
-                  ),
-              onTap: () {
-                Navigator.of(context)
-                    .popAndPushNamed(AttractionsScreen.routeName);
-              },
-            ),*/
-            //TODO: fix the items below
-            ListTile(
-              leading: const Icon(
-                Icons.event,
-                size: 24,
-              ),
-              title: const Text('Афиша мероприятий',
-                  style: TextStyle(
-                    fontFamily: 'Montserrat',
-                    fontSize: 22,
-                  )
-                  //fontWeight: FontWeight.bold),
-                  ),
-              onTap: () {
-                Navigator.of(context).popAndPushNamed(EventsCalendar.routeName);
-              },
-            ),
-            ListTile(
-              leading: const Icon(
-                Icons.map,
-                size: 24,
-              ),
-              title: const Text('Карта',
-                  style: TextStyle(
-                    fontFamily: 'Montserrat',
-                    fontSize: 22,
-                  )
-                  //fontWeight: FontWeight.bold),
-                  ),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: const Icon(
-                Icons.contact_page,
-                size: 24,
-              ),
-              title: const Text('Контакты',
-                  style: TextStyle(
-                    fontFamily: 'Montserrat',
-                    fontSize: 22,
-                  )
-                  //fontWeight: FontWeight.bold),
-                  ),
-              onTap: () {
-                Navigator.of(context).popAndPushNamed(ContactsScreen.routeName);
-              },
-            ),
+            buildListTile('Афиша мероприятий', Icons.event, () {
+              Navigator.of(context).popAndPushNamed(EventsCalendar.routeName);
+            }),
+            buildListTile('Карта', Icons.map, () {}),
+            buildListTile('Контакты', Icons.contact_page, () {
+              Navigator.of(context).popAndPushNamed(ContactsScreen.routeName);
+            }),
             Divider(
               thickness: 2,
               indent: 20,
