@@ -126,9 +126,11 @@ class AttractionItem extends StatelessWidget {
                       SizedBox(
                         width: 6,
                       ),
-                      Text(
-                        '$location',
-                        style: TextStyle(color: Colors.black),
+                      FittedBox(
+                        child: Text(
+                          '$location',
+                          style: TextStyle(color: Colors.black),
+                        ),
                       )
                     ],
                   ),
