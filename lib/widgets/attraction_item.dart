@@ -129,7 +129,7 @@ class AttractionItem extends StatelessWidget {
                       FittedBox(
                         child: Text(
                           '$location',
-                          style: TextStyle(color: Colors.black),
+                          style: TextStyle(color: Colors.black, fontSize: 12),
                         ),
                       )
                     ],
