@@ -52,26 +52,17 @@ class _TerminalItemState extends State<TerminalItem> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          decoration:
-              BoxDecoration(border: Border(bottom: BorderSide(width: 1))),
+        Card(
+          elevation: 4,
+          margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
           child: ListTile(
             leading: CircleAvatar(
-              backgroundColor: Colors.lightGreen,
-              radius: 30,
-              child: Padding(
-                padding: const EdgeInsets.all(0),
-                child: FittedBox(
-                  child: Text(
-                    '27 мин',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: (24),
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
+              //backgroundColor: Colors.lightGreen,
+              backgroundImage: NetworkImage(
+                'https://www.sochipark.ru/upload/app/images/attractions/standard_980/kvant.jpg',
               ),
+
+              radius: 30,
             ),
             title: Text(
               'КВАНТОВЫЙ СКАЧОК',
