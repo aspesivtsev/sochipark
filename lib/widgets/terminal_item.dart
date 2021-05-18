@@ -71,12 +71,31 @@ class _TerminalItemState extends State<TerminalItem> {
             subtitle: Text(
               '#экстремальный',
             ),
-            trailing: Text(
-              'РАБОТАЕТ',
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: (16),
-                  color: Colors.lightGreen),
+            trailing: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'РАБОТАЕТ',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: (16),
+                      color: Colors.lightGreen),
+                ),
+                Text(
+                  'ожидание',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: (14),
+                      color: Colors.blueGrey),
+                ),
+                Text(
+                  '~30 мин',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: (14),
+                      color: Colors.blueGrey),
+                ),
+              ],
             ),
           ),
         ),
