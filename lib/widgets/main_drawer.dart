@@ -16,12 +16,12 @@ class MainDrawer extends StatelessWidget {
     return ListTile(
       leading: Icon(
         icon,
-        size: 26,
+        size: 24,
       ),
       title: Text(title,
           style: TextStyle(
             fontFamily: 'Montserrat',
-            fontSize: 18,
+            fontSize: 16,
           )
           //fontWeight: FontWeight.bold),
           ),
@@ -36,12 +36,20 @@ class MainDrawer extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Container(
-              height: 90,
+              height: 120,
               width: double.infinity,
               // margin: EdgeInsets.all(20),
               padding: EdgeInsets.only(top: 30, left: 20),
               alignment: Alignment.center,
-              color: Theme.of(context).accentColor,
+              //color: Theme.of(context).accentColor,
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                      colors: [
+                    Colors.green,
+                    Colors.lightGreen,
+                  ])),
               child: const Text(
                 'Волшебство начинается...',
                 style: TextStyle(
