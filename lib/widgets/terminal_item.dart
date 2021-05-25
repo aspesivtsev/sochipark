@@ -4,21 +4,23 @@ class TerminalItem extends StatefulWidget {
   //TerminalItem({Key key = const Key("any_key")}) : super(key: key);
   //this is a draft of sceleton for listTile
 
-  final Icon icon;
+  final String pic;
   final String title;
   final String waitTime;
   final String type;
   final String status;
   final Color statusColor;
 
-  TerminalItem({
-    required this.icon,
+  const TerminalItem({
+    Key key,
+    required this.pic,
     required this.title,
     required this.waitTime,
     required this.type,
     required this.status,
     required this.statusColor,
-  });
+  }) : super(key: key);
+
   @override
   _TerminalItemState createState() => _TerminalItemState();
 }
@@ -35,17 +37,17 @@ class _TerminalItemState extends State<TerminalItem> {
             leading: CircleAvatar(
               //backgroundColor: Colors.lightGreen,
               backgroundImage: NetworkImage(
-                'https://www.sochipark.ru/upload/app/images/attractions/standard_980/kvant.jpg',
+                pic,
               ),
 
               radius: 30,
             ),
             title: Text(
-              'КВАНТОВЫЙ СКАЧОК',
+              title,
               //style: Theme.of(context).textTheme.headline6,
             ),
             subtitle: Text(
-              '#экстремальный',
+              type,
             ),
             trailing: Column(
               mainAxisAlignment: MainAxisAlignment.center,
