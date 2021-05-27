@@ -4,18 +4,20 @@ class TerminalItem extends StatefulWidget {
   //TerminalItem({Key key = const Key("any_key")}) : super(key: key);
   //this is a draft of sceleton for listTile
 
-  final String pic;
+  final String picUrl;
   final String title;
   final String waitTime;
+  final String waiting;
   final String type;
   final String status;
   final Color statusColor;
 
   const TerminalItem({
-    Key key,
-    required this.pic,
+    Key? key,
+    required this.picUrl,
     required this.title,
     required this.waitTime,
+    required this.waiting,
     required this.type,
     required this.status,
     required this.statusColor,
@@ -37,43 +39,63 @@ class _TerminalItemState extends State<TerminalItem> {
             leading: CircleAvatar(
               //backgroundColor: Colors.lightGreen,
               backgroundImage: NetworkImage(
-                pic,
+                widget.picUrl,
               ),
 
               radius: 30,
             ),
             title: Text(
-              title,
+              widget.title,
               //style: Theme.of(context).textTheme.headline6,
             ),
             subtitle: Text(
-              type,
+              widget.type,
             ),
-            trailing: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'РАБОТАЕТ',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: (16),
-                      color: Colors.lightGreen),
-                ),
-                Text(
-                  'ожидание',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: (14),
-                      color: Colors.blueGrey),
-                ),
-                Text(
-                  '~30 мин',
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: (14),
-                      color: Colors.blueGrey),
-                ),
-              ],
+            trailing: Container(
+              width: 100,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: Text(
+                      widget.status,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: (20),
+                          color: Colors.lightGreen),
+                    ),
+                  ),
+                  /*Text(
+                    widget.waiting,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: (14),
+                        color: Colors.blueGrey),
+                  ),*/
+                  Container(
+                    //margin: EdgeInsets.all(0),
+                    //padding: EdgeInsets.all(0),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.access_time,
+                          size: 20,
+                          color: Colors.pink,
+                        ),
+                        FittedBox(
+                          child: Text(
+                            widget.waitTime,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: (17),
+                                color: Colors.blueGrey),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

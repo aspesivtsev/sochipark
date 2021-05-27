@@ -5,22 +5,22 @@ import './models/types.dart';
 const DUMMY_TYPES = const [
   Type(
     id: 't1',
-    title: 'Экстремальный',
+    title: 'экстремальный',
     color: Colors.red,
   ),
   Type(
     id: 't2',
-    title: 'Семейный',
+    title: 'семейный',
     color: Colors.green,
   ),
   Type(
     id: 't3',
-    title: 'Детский',
+    title: 'детский',
     color: Colors.yellow,
   ),
   Type(
     id: 't4',
-    title: 'Водный',
+    title: 'водный',
     color: Colors.blue,
   ),
 ];

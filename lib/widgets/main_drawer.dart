@@ -36,7 +36,7 @@ class MainDrawer extends StatelessWidget {
         child: Column(
           children: <Widget>[
             Container(
-              height: 120,
+              height: 90,
               width: double.infinity,
               // margin: EdgeInsets.all(20),
               padding: EdgeInsets.only(top: 30, left: 20),
