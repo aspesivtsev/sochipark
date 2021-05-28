@@ -34,6 +34,7 @@ class _TerminalItemState extends State<TerminalItem> {
       children: [
         Card(
           elevation: 4,
+          color: Colors.grey[100],
           margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
           child: ListTile(
             leading: CircleAvatar(
@@ -46,7 +47,10 @@ class _TerminalItemState extends State<TerminalItem> {
             ),
             title: Text(
               widget.title,
-              //style: Theme.of(context).textTheme.headline6,
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: (16),
+                  color: Colors.black),
             ),
             subtitle: Text(
               widget.type,
@@ -54,16 +58,14 @@ class _TerminalItemState extends State<TerminalItem> {
             trailing: Container(
               width: 100,
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Expanded(
-                    child: Text(
-                      widget.status,
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: (20),
-                          color: Colors.lightGreen),
-                    ),
+                  Text(
+                    widget.status,
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: (15),
+                        color: widget.statusColor),
                   ),
                   /*Text(
                     widget.waiting,
@@ -76,11 +78,15 @@ class _TerminalItemState extends State<TerminalItem> {
                     //margin: EdgeInsets.all(0),
                     //padding: EdgeInsets.all(0),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
                           Icons.access_time,
-                          size: 20,
-                          color: Colors.pink,
+                          size: 18,
+                          color: Colors.blueGrey,
+                        ),
+                        SizedBox(
+                          width: 3,
                         ),
                         FittedBox(
                           child: Text(
