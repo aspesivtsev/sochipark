@@ -12,20 +12,31 @@ class TerminalScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Терминал'),
+        actions: [
+          Container(
+            padding: EdgeInsets.only(right: 20),
+            child: IconButton(
+                icon: Icon(
+                  Icons.refresh,
+                  size: 30,
+                ),
+                onPressed: () {}),
+          )
+        ],
       ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
               Container(
-                width: _mq.size.width - 20,
-                height: 60,
-                margin: EdgeInsets.all(25),
+                width: _mq.size.width - 25,
+                height: 50,
+                margin: EdgeInsets.all(10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.park_outlined, size: 25, color: Colors.blueGrey),
-                    Text('Сейчас в Парке 2348 гостей',
+                    //Icon(Icons.park_outlined, size: 25, color: Colors.blueGrey),
+                    Text('Сейчас в парке 2348 гостей',
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: (20),
