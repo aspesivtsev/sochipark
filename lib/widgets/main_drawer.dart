@@ -4,6 +4,7 @@ import '../screens/contacts_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../screens/calendar_screen.dart';
 import '../screens/terminal_screen.dart';
+import '../screens/gallery_screen.dart';
 
 class MainDrawer extends StatelessWidget {
   static const buyUrl = 'https://www.sochipark.ru/tickets/?tab=ONLINE';
@@ -72,6 +73,9 @@ class MainDrawer extends StatelessWidget {
               Navigator.of(context).popAndPushNamed(EventsCalendar.routeName);
             }),
             buildListTile('Карта', Icons.map, () {}),
+            buildListTile('Галерея', Icons.photo_album, () {
+              Navigator.of(context).popAndPushNamed(GalleryScreen.routeName);
+            }),
             buildListTile('Контакты', Icons.contact_page, () {
               Navigator.of(context).popAndPushNamed(ContactsScreen.routeName);
             }),
