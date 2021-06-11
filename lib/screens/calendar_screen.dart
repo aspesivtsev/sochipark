@@ -24,32 +24,58 @@ class _EventsCalendarState extends State<EventsCalendar> {
       body: SingleChildScrollView(
         child: Container(
           child: TableCalendar(
+            holidayPredicate: (day) {
+              // Every 20th day of the month will be treated as a holiday
+              //return day.day == 20;
+              return day.weekday == 7;
+            },
             calendarStyle: CalendarStyle(
               selectedDecoration: BoxDecoration(
-                shape: BoxShape.circle,
+                shape: BoxShape.rectangle,
                 color: Colors.pink,
-                //borderRadius: BorderRadius.circular(5),
+                borderRadius: BorderRadius.circular(5),
                 border: Border.all(
                   color: Colors.red,
                   width: 1,
                 ),
               ),
+              //weekendDecoration: ,
               selectedTextStyle: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                   color: Colors.white),
               holidayDecoration: BoxDecoration(
-                color: Colors.blueGrey,
+                color: Colors.pink[50],
               ),
+
               todayTextStyle: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                   fontSize: 20),
               todayDecoration: BoxDecoration(
+                shape: BoxShape.rectangle,
                 color: Colors.lightGreen.shade400,
-                //borderRadius: BorderRadius.circular(5),
+                borderRadius: BorderRadius.circular(5),
                 border: Border.all(
                   color: Colors.green,
+                  width: 1,
+                ),
+              ),
+              weekendDecoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(5),
+                border: Border.all(
+                  color: Colors.red,
+                  width: 1,
+                ),
+              ),
+              defaultDecoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(5),
+                border: Border.all(
+                  color: Colors.deepPurple,
                   width: 1,
                 ),
               ),
@@ -68,7 +94,6 @@ class _EventsCalendarState extends State<EventsCalendar> {
             selectedDayPredicate: (day) {
               // Use `selectedDayPredicate` to determine which day is currently selected.
               // If this returns true, then `day` will be marked as selected.
-
               // Using `isSameDay` is recommended to disregard
               // the time-part of compared DateTime objects.
               return isSameDay(_selectedDay, day);
