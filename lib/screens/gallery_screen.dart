@@ -7,7 +7,7 @@ class GalleryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _mq = MediaQuery.of(context);
+    //final _mq = MediaQuery.of(context);
     return Scaffold(
       appBar: AppBar(
         title: Text('Галерея'),

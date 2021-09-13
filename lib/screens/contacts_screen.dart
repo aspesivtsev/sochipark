@@ -109,14 +109,16 @@ class ContactsScreen extends StatelessWidget {
             TextButton(
               onPressed: () => launch(_emailLaunchUriSP.toString()),
               child: Text('info@sochi-park.ru',
-                  style: TextStyle(color: Theme.of(context).accentColor)),
+                  style: TextStyle(
+                      color: Theme.of(context).colorScheme.secondary)),
             ),
             buildSectionText(
                 context, 'Электронный адрес отеля-замка Богатырь:'),
             TextButton(
               onPressed: () => launch(_emailLaunchUriBG.toString()),
               child: Text('reservations@sochi-park.ru',
-                  style: TextStyle(color: Theme.of(context).accentColor)),
+                  style: TextStyle(
+                      color: Theme.of(context).colorScheme.secondary)),
             ),
             ElevatedButton(
               onPressed: () => _launchURL(yandexMapUrl),
