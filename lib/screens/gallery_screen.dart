@@ -313,15 +313,18 @@ class Location {
 
 const urlPrefix =
     'https://flutter.dev/docs/cookbook/img-files/effects/parallax';
+//'https://www.sochipark.ru/upload/app/images/attractions/standard_980';
 const locations = [
   Location(
-    name: 'Mount Rushmore',
+    name: 'Колесо времени',
     place: 'U.S.A',
     imageUrl: '$urlPrefix/01-mount-rushmore.jpg',
+    //imageUrl: '$urlPrefix/koleso.jpg',
   ),
   Location(
     name: 'Singapore',
     place: 'China',
+    //imageUrl: '$urlPrefix/kvant.jpg',
     imageUrl: '$urlPrefix/02-singapore.jpg',
   ),
   Location(
