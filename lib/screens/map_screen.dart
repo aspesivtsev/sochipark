@@ -11,9 +11,12 @@ class ParkMap extends StatefulWidget {
 }
 
 class _ParkMapState extends State<ParkMap> {
-  double long = 49.5;
-  double lat = -0.09;
-  LatLng point = LatLng(43.404574, 39.964702);
+  //double long = 43.404574;
+  //double lat = 39.964702;
+//1 параметр Y - чем больше тем выше..
+//2 параметр Х - чем больше тем правее
+//43.40$$60 эти цифры
+  LatLng point = LatLng(43.404460, 39.964252);
   var location = [];
 
   @override
@@ -29,7 +32,9 @@ class _ParkMapState extends State<ParkMap> {
               FlutterMap(
                 options: new MapOptions(
                   center: LatLng(43.404574, 39.964702),
-                  zoom: 30.0,
+                  zoom: 18.0,
+                  minZoom: 10.0,
+                  maxZoom: 18.0,
                 ),
                 layers: [
                   TileLayerOptions(
@@ -39,13 +44,34 @@ class _ParkMapState extends State<ParkMap> {
                   new MarkerLayerOptions(
                     markers: [
                       Marker(
-                        width: 80.0,
-                        height: 80.0,
+                        width: 90.0,
+                        height: 90.0,
                         point: point,
                         builder: (ctx) => new Container(
-                          child: Icon(
-                            Icons.location_on,
-                            color: Colors.green,
+                          child: Column(
+                            children: [
+                              Icon(
+                                Icons.location_on,
+                                color: Colors.green,
+                              ),
+                              Text('Вход'),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Marker(
+                        width: 90.0,
+                        height: 90.0,
+                        point: LatLng(43.404280, 39.965252),
+                        builder: (ctx) => new Container(
+                          child: Column(
+                            children: [
+                              Icon(
+                                Icons.location_on,
+                                color: Colors.red,
+                              ),
+                              Text('Сраное озеро'),
+                            ],
                           ),
                         ),
                       )

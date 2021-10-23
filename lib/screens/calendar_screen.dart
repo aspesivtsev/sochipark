@@ -1,5 +1,6 @@
 //import 'dart:html';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 //import 'package:shared_preferences/shared_preferences.dart';
@@ -126,6 +127,8 @@ class _EventsCalendarState extends State<EventsCalendar> {
               ),
             ),
             SizedBox(height: 10),
+
+            ///каркас инфоблока
             Container(
               padding: EdgeInsets.only(left: 30),
               width: mq.width,
@@ -134,9 +137,66 @@ class _EventsCalendarState extends State<EventsCalendar> {
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(50),
                       topRight: Radius.circular(50)),
-                  border: Border.all(color: Colors.pink, width: 5),
+                  border: Border.all(color: Colors.white, width: 6),
                   //color: Color(0xff30384c)),
                   color: Colors.pink),
+              //содержимое инфоблока
+              child: Stack(
+                children: <Widget>[
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Padding(
+                        padding: EdgeInsets.only(top: 25),
+                        child: Text(
+                          'Сегодня',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(top: 20),
+                        child: Row(
+                          children: <Widget>[
+                            Icon(
+                              CupertinoIcons.check_mark_circled_solid,
+                              color: Colors.white,
+                            ),
+                            Container(
+                              padding: EdgeInsets.symmetric(horizontal: 10),
+                              width: mq.width * 0.8,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Text(
+                                    'Event 1',
+                                    style: TextStyle(
+                                        fontSize: 20, color: Colors.white),
+                                  ),
+                                  SizedBox(height: 10),
+                                  Text(
+                                    'location of the event',
+                                    style: TextStyle(
+                                        fontSize: 20, color: Colors.white),
+                                  ),
+                                  SizedBox(height: 10),
+                                  Text(
+                                    'The description of event 1 to be updated later on this item',
+                                    style: TextStyle(
+                                        fontSize: 20, color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),
