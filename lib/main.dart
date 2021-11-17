@@ -7,7 +7,7 @@ import './screens/calendar_screen.dart';
 import './screens/terminal_screen.dart';
 import './screens/gallery_screen.dart';
 import './screens/map_screen.dart';
-
+import './screens/home_screen.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
 void main() {
@@ -53,7 +53,8 @@ class MyApp extends StatelessWidget {
       //home: MyHomePage(),
       initialRoute: '/',
       routes: {
-        '/': (ctx) => AttractionsScreen(),
+        '/': (ctx) => HomeScreen(),
+        //'/': (ctx) => AttractionsScreen(), //бывший домашний экран
         AttractionsScreen.routeName: (ctx) => AttractionsScreen(),
         AttractionDetailScreen.routeName: (ctx) => AttractionDetailScreen(),
         ContactsScreen.routeName: (ctx) => ContactsScreen(),
@@ -61,6 +62,7 @@ class MyApp extends StatelessWidget {
         TerminalScreen.routeName: (ctx) => TerminalScreen(),
         GalleryScreen.routeName: (ctx) => GalleryScreen(),
         ParkMap.routeName: (ctx) => ParkMap(),
+        HomeScreen.routeName: (ctx) => HomeScreen(),
       },
       onUnknownRoute: (settings) {
         //if all the routes fail it will show the main screen

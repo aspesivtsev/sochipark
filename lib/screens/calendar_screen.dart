@@ -130,9 +130,9 @@ class _EventsCalendarState extends State<EventsCalendar> {
 
             ///каркас инфоблока
             Container(
-              padding: EdgeInsets.only(left: 30),
+              padding: EdgeInsets.only(left: 20),
               width: mq.width,
-              height: mq.height * 0.55,
+              //height: mq.height * 0.55,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(50),
@@ -159,21 +159,35 @@ class _EventsCalendarState extends State<EventsCalendar> {
                       Container(
                         padding: EdgeInsets.only(top: 20),
                         child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Icon(
-                              CupertinoIcons.check_mark_circled_solid,
-                              color: Colors.white,
+                            ///Icon(
+                            ///CupertinoIcons.check_mark_circled_solid,
+                            ///color: Colors.white,
+                            ///),
+                            Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10),
+                                  ),
+                                  border: Border.all(
+                                      color: Colors.white, width: 1)),
+                              width: 100,
+                              height: 100,
+                              //color: Colors.white60,
                             ),
                             Container(
-                              padding: EdgeInsets.symmetric(horizontal: 10),
-                              width: mq.width * 0.8,
+                              padding: EdgeInsets.symmetric(horizontal: 5),
+                              width: mq.width * 0.65,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   Text(
                                     'Event 1',
                                     style: TextStyle(
-                                        fontSize: 20, color: Colors.white),
+                                        fontSize: 20,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
                                   ),
                                   SizedBox(height: 10),
                                   Text(
@@ -181,16 +195,17 @@ class _EventsCalendarState extends State<EventsCalendar> {
                                     style: TextStyle(
                                         fontSize: 20, color: Colors.white),
                                   ),
-                                  SizedBox(height: 10),
-                                  Text(
-                                    'The description of event 1 to be updated later on this item',
-                                    style: TextStyle(
-                                        fontSize: 20, color: Colors.white),
-                                  ),
                                 ],
                               ),
-                            )
+                            ),
                           ],
+                        ),
+                      ),
+                      Container(
+                        padding: const EdgeInsets.only(top: 8.0),
+                        child: Text(
+                          'The description of event 1 to be updated later on this item. The description of event 1 to be updated later on this item. The description of event 1 to be updated later on this item. ',
+                          style: TextStyle(fontSize: 20, color: Colors.white),
                         ),
                       ),
                     ],

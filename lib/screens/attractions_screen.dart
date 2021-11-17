@@ -23,8 +23,13 @@ class AttractionsScreen extends StatelessWidget {
     attractions.sort((a, b) => a.sorting.compareTo(b.sorting));
 
     return Scaffold(
+      ///полупрозрачный апбар
+      //extendBodyBehindAppBar: true,
       appBar: AppBar(
         centerTitle: true,
+
+        //backgroundColor: Color(0xdd673ab7), //прозрачный цвет для апбара
+        //elevation: 0,//это тоже удалить
         /*title: Text(
           'Сочи Парк',
           style: TextStyle(fontSize: 30, fontWeight: FontWeight.normal),*/
