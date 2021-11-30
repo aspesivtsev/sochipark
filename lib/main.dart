@@ -49,6 +49,19 @@ class MyApp extends StatelessWidget {
                   fontFamily: 'Tavolga',
                   fontWeight: FontWeight.bold,
                 ),
+                headline4: const TextStyle(
+                  //color: Colors.deepPurple,
+                  color: Color(0xFF342C81),
+                  fontSize: 19,
+                  fontFamily: 'Tavolga',
+                  fontWeight: FontWeight.bold,
+                  /*shadows: <Shadow>[
+                    Shadow(
+                        offset: Offset(4.0, 4.0),
+                        blurRadius: 8,
+                        color: Color.fromARGB(80, 0, 0, 0))
+                  ],*/
+                ),
               )),
       //home: MyHomePage(),
       initialRoute: '/',
@@ -66,7 +79,7 @@ class MyApp extends StatelessWidget {
       },
       onUnknownRoute: (settings) {
         //if all the routes fail it will show the main screen
-        return MaterialPageRoute(builder: (ctx) => AttractionsScreen());
+        return MaterialPageRoute(builder: (ctx) => HomeScreen());
       },
     );
   }

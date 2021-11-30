@@ -117,7 +117,7 @@ class AttractionDetailScreen extends StatelessWidget {
                             width: 1,
                           ),
                           borderRadius:
-                              const BorderRadius.all(Radius.circular(10)),
+                              const BorderRadius.all(Radius.circular(8)),
                         ),
                         child: Text(
                           '#$_types',

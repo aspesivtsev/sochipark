@@ -59,8 +59,8 @@ class AttractionItem extends StatelessWidget {
               children: <Widget>[
                 ClipRRect(
                   borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(10),
-                      topRight: Radius.circular(10)),
+                      topLeft: Radius.circular(5),
+                      topRight: Radius.circular(5)),
                   child: Image.network(
                     imageUrl,
                     height: 180,

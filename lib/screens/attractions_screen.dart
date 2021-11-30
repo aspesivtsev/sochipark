@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sochipark/widgets/attraction_item.dart';
-import '../widgets/main_drawer.dart';
+//import '../widgets/main_drawer.dart';
 import '../dummy_data.dart';
 
 class AttractionsScreen extends StatelessWidget {
@@ -44,7 +44,7 @@ class AttractionsScreen extends StatelessWidget {
           ],
         ),
       ),
-      drawer: MainDrawer(),
+      //drawer: MainDrawer(),
       body:
           //removed SafeArea from here so cards could take the whole space available
           Container(

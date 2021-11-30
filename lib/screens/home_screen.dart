@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/main_drawer.dart';
+import '../widgets/title_with_more_btn.dart';
 
 class HomeScreen extends StatelessWidget {
   static const routeName = '/home';
@@ -27,6 +28,12 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         drawer: MainDrawer(),
-        body: Container());
+        body: SingleChildScrollView(
+            child: Column(
+          children: <Widget>[
+            TitleWithMoreButton(
+                title: 'Ближайшие события', btnText: 'больше', press: () {}),
+          ],
+        )));
   }
 }
