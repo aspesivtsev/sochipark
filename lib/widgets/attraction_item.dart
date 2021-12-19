@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:ui';
+
 import '../screens/attraction_detail_screen.dart';
 
 class AttractionItem extends StatelessWidget {

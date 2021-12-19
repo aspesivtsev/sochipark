@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/main_drawer.dart';
 import '../widgets/title_with_more_btn.dart';
+import '../dummy_data.dart';
 
 class HomeScreen extends StatelessWidget {
   static const routeName = '/home';
@@ -13,6 +14,16 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //высота и ширина экрана
+    Size size = MediaQuery.of(context).size;
+//тут мы берем первые несколько указанных элементов
+    final attractions = DUMMY_ATTRACTIONS
+        .where((attraction) {
+          return attraction.isActive == true;
+        })
+        .toList()
+        .take(5);
+
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
@@ -33,7 +44,68 @@ class HomeScreen extends StatelessWidget {
           children: <Widget>[
             TitleWithMoreButton(
                 title: 'Ближайшие события', btnText: 'больше', press: () {}),
+            Container(
+              //height: size.height * 0.4
+              //width: size.width * 0.4,
+              //alignment: Alignment.centerLeft,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsets.all(5),
+                      width: size.width * 0.4,
+                      child: Column(
+                        children: <Widget>[
+                          Image.network(
+                            'https://www.sochipark.ru/upload/app/images/attractions/standard_980/kvant.jpg',
+                            height: 180,
+                            //width: 240,
+                            fit: BoxFit.cover,
+                          ),
+                          Container(
+                            padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                              color: Colors.blueGrey,
+                              boxShadow: [
+                                BoxShadow(
+                                    offset: Offset(0, 10),
+                                    blurRadius: 50,
+                                    color: Colors.pink.withOpacity(0.23))
+                              ],
+                            ),
+                            child: Row(
+                              children: <Widget>[
+                                RichText(
+                                    text: TextSpan(
+                                  children: [
+                                    TextSpan(
+                                        text: 'Сбор педиков у квантового'
+                                            .toUpperCase(),
+                                        style:
+                                            Theme.of(context).textTheme.button)
+                                  ],
+                                ))
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    //simple for loop with pictures can be added to a Row for axample
+                    /*for (var i in attractions)
+                      Image.network(
+                        i.imageUrl,
+                        height: 180,
+                        width: 240,
+                        fit: BoxFit.cover,
+                      )*/
+                  ],
+                ),
+              ),
+            )
           ],
         )));
   }
+  //TODO: ближайшие события, афиша, аттракционы, спецпредложения, очереди
 }
