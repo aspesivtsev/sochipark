@@ -80,8 +80,7 @@ class HomeScreen extends StatelessWidget {
                                     text: TextSpan(
                                   children: [
                                     TextSpan(
-                                        text: 'Сбор педиков у квантового'
-                                            .toUpperCase(),
+                                        text: 'Квантовый скачок'.toUpperCase(),
                                         style:
                                             Theme.of(context).textTheme.button)
                                   ],
