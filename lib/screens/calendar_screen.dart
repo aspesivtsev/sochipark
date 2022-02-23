@@ -92,8 +92,8 @@ class _EventsCalendarState extends State<EventsCalendar> {
                   CalendarFormat.twoWeeks: '2 недели',
                   CalendarFormat.week: 'неделя',
                 },
-                firstDay: DateTime.utc(2021, 01, 01),
-                lastDay: DateTime.utc(2022, 2, 1),
+                firstDay: DateTime.utc(2022, 02, 22),
+                lastDay: DateTime.utc(2023, 02, 01),
                 focusedDay: _focusedDay,
                 calendarFormat: _calendarFormat,
                 selectedDayPredicate: (day) {
