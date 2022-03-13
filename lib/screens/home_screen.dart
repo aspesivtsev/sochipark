@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/main_drawer.dart';
 import '../widgets/title_with_more_btn.dart';
-import '../dummy_data.dart';
+//import '../dummy_data.dart';
 
 class HomeScreen extends StatelessWidget {
   static const routeName = '/home';
@@ -17,13 +17,13 @@ class HomeScreen extends StatelessWidget {
     //высота и ширина экрана
     Size size = MediaQuery.of(context).size;
 //тут мы берем первые несколько указанных элементов
-    final attractions = DUMMY_ATTRACTIONS
+    /* final attractions = DUMMY_ATTRACTIONS
         .where((attraction) {
           return attraction.isActive == true;
         })
         .toList()
         .take(5);
-
+*/
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
@@ -66,31 +66,31 @@ class HomeScreen extends StatelessWidget {
                           Container(
                             padding: EdgeInsets.all(5),
                             decoration: BoxDecoration(
-                              color: Colors.blueGrey,
+                              color: Colors.white60,
                               boxShadow: [
                                 BoxShadow(
                                     offset: Offset(0, 10),
-                                    blurRadius: 50,
-                                    color: Colors.pink.withOpacity(0.23))
+                                    blurRadius: 20,
+                                    color: Colors.grey.withOpacity(0.23))
                               ],
                             ),
                             child: Row(
                               children: <Widget>[
-                                RichText(
-                                    text: TextSpan(
-                                  children: [
-                                    TextSpan(
-                                        text: 'Квантовый скачок'.toUpperCase(),
-                                        style:
-                                            Theme.of(context).textTheme.button)
-                                  ],
-                                ))
+                                FittedBox(
+                                  fit: BoxFit.fitWidth,
+                                  child: Text(
+                                    'КВАНТОВЫЙ СКАЧОК',
+                                    style: TextStyle(fontSize: 14),
+                                    maxLines: 1,
+                                  ),
+                                ),
                               ],
                             ),
                           ),
                         ],
                       ),
                     ),
+
                     //simple for loop with pictures can be added to a Row for axample
                     /*for (var i in attractions)
                       Image.network(

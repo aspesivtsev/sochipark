@@ -70,7 +70,7 @@ class _ParkMapState extends State<ParkMap> {
                                 Icons.location_on,
                                 color: Colors.red,
                               ),
-                              Text('Сраное озеро'),
+                              Text('ОЗЕРО'),
                             ],
                           ),
                         ),

@@ -122,7 +122,7 @@ class AttractionItem extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Icon(Icons.public),
+                      Icon(Icons.location_on_outlined),
                       SizedBox(
                         width: 6,
                       ),

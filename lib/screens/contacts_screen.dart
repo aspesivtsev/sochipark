@@ -60,7 +60,7 @@ class ContactsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Контакты'),
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.pink,
         elevation: 0,
       ),
       body: SafeArea(
