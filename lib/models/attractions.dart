@@ -34,10 +34,3 @@ class Attraction {
       required this.isWorking,
       required this.sorting});
 }
-
-/*final Complexity complexity;
-  final Affordability affordability;
-  final bool isGlutenFree;
-  final bool isLactoseFree;
-
-  final bool isVegetarian;*/

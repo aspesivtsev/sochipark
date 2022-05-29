@@ -6,16 +6,17 @@ import '../widgets/social_share.dart';
 
 class ContactsScreen extends StatelessWidget {
   static const routeName = '/contacts';
-  static const bogatyr_url = 'https://bogatyr-castle.ru';
+  static final Uri bogatyrUrl = Uri.parse('https://bogatyr-castle.ru');
   static const tel = 'tel:88001003339';
   static const telBg = 'tel:+78622417777';
   //TODO: give the correct coordinates for sochipark location below
   //static const yandexMapUrl = 'https://yandex.ru/maps/-/CCU4iUTHsC';
-  static const yandexMapUrl = 'https://yandex.ru/maps/-/CCU45RA5XD';
+  static final Uri yandexMapUrl =
+      Uri.parse('https://yandex.ru/maps/-/CCU45RA5XD');
   //static const _email = '';
 
-  void _launchURL(String _url) async => await canLaunch(_url)
-      ? await launch(_url)
+  void _launchURL(_url) async => await canLaunchUrl(_url)
+      ? await launchUrl(_url)
       : throw 'Could not launch $_url';
 
   final Uri _emailLaunchUriBG = Uri(
@@ -98,7 +99,7 @@ class ContactsScreen extends StatelessWidget {
               ),
             ),
             ElevatedButton(
-              onPressed: () => _launchURL(bogatyr_url),
+              onPressed: () => _launchURL(bogatyrUrl),
               child: Text('перейти на сайт Богатыря!'),
               style: ElevatedButton.styleFrom(
                 primary: Colors.lightGreen, // background
@@ -107,7 +108,7 @@ class ContactsScreen extends StatelessWidget {
             ),
             buildSectionText(context, 'Электронный адрес Парка:'),
             TextButton(
-              onPressed: () => launch(_emailLaunchUriSP.toString()),
+              onPressed: () => launchUrl(_emailLaunchUriSP),
               child: Text('info@sochi-park.ru',
                   style: TextStyle(
                       color: Theme.of(context).colorScheme.secondary)),
@@ -115,7 +116,7 @@ class ContactsScreen extends StatelessWidget {
             buildSectionText(
                 context, 'Электронный адрес отеля-замка Богатырь:'),
             TextButton(
-              onPressed: () => launch(_emailLaunchUriBG.toString()),
+              onPressed: () => launchUrl(_emailLaunchUriBG),
               child: Text('reservations@sochi-park.ru',
                   style: TextStyle(
                       color: Theme.of(context).colorScheme.secondary)),

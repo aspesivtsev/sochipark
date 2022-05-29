@@ -9,9 +9,10 @@ import '../screens/map_screen.dart';
 import '../screens/home_screen.dart';
 
 class MainDrawer extends StatelessWidget {
-  static const buyUrl = 'https://www.sochipark.ru/tickets/?tab=ONLINE';
-  void _launchURL(String _url) async => await canLaunch(_url)
-      ? await launch(_url)
+  static final Uri buyUrl =
+      Uri.parse('https://www.sochipark.ru/tickets/?tab=ONLINE');
+  void _launchURL(Uri _url) async => await canLaunchUrl(_url)
+      ? await launchUrl(_url)
       : throw 'Could not launch $_url';
 
   Widget buildListTile(
