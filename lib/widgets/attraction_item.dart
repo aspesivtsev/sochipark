@@ -40,6 +40,7 @@ class AttractionItem extends StatelessWidget {
   });
 
   void selectAttraction(BuildContext context) {
+    print('выбранный айди $id');
     Navigator.of(context)
         .pushNamed(AttractionDetailScreen.routeName, arguments: {'id': id});
   }

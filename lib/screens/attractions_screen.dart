@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:sochipark/widgets/attraction_item.dart';
+import 'package:provider/provider.dart';
+import '../providers/homepageprovider.dart';
+import '../helpers/apihelper.dart';
+import '../models/attractions.dart';
 //import '../widgets/main_drawer.dart';
-import '../dummy_data.dart';
+//import '../dummy_data.dart';
 
-class AttractionsScreen extends StatelessWidget {
+class AttractionsScreen extends StatefulWidget {
   static const routeName = '/attractions';
+
+  @override
+  State<AttractionsScreen> createState() => _AttractionsScreenState();
+}
+
+class _AttractionsScreenState extends State<AttractionsScreen> {
   //final image not to rebuil it
   final Image titleImage = Image.asset(
     'assets/images/sochipark_logo_small-white.png',
@@ -12,15 +22,30 @@ class AttractionsScreen extends StatelessWidget {
     height: 40,
   );
 
+  _getAttractions() async {
+    var provider = Provider.of<HomePageProvider>(context, listen: false);
+    var response = await APIHelper.getAttractions();
+    if (response.isSuccessful) {
+      provider.setAttractionList(response.data);
+    } else {}
+    provider.setIsProcessing(false);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _getAttractions();
+  }
+
   @override
   Widget build(BuildContext context) {
     //final routeArgs =
     //  ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
 //getting all the active attractions and sorting them according to sorting field
-    final attractions = DUMMY_ATTRACTIONS.where((attraction) {
+    /*final attractions = DUMMY_ATTRACTIONS.where((attraction) {
       return attraction.isActive == true;
-    }).toList();
-    attractions.sort((a, b) => a.sorting.compareTo(b.sorting));
+    }).toList();*/
+    //attractions.sort((a, b) => a.sorting.compareTo(b.sorting));
 
     return Scaffold(
       ///полупрозрачный апбар
@@ -58,28 +83,31 @@ class AttractionsScreen extends StatelessWidget {
               colors: [Colors.lightGreen, Color.fromRGBO(255, 238, 165, 1)]),
           //colors: [Color.fromRGBO(83, 33, 168, 0.1), Colors.white]),*/
         ),
-        child: ListView.builder(
-          itemBuilder: (ctx, index) {
-            return AttractionItem(
-              id: attractions[index].id,
-              title: attractions[index].title,
-              imageUrl: attractions[index].imageUrl,
-              shortDescr: attractions[index].shortDescr,
-              description: attractions[index].description,
-              types: attractions[index].types,
-              workTime: attractions[index].workTime,
-              age: attractions[index].age,
-              height: attractions[index].height,
-              location: attractions[index].location,
-              withAdults: attractions[index].withAdults,
-              isPurchasedSeparately: attractions[index].isPurchasedSeparately,
-              specs: attractions[index].specs,
-              isActive: attractions[index].isActive,
-              isWorking: attractions[index].isWorking,
-              sorting: attractions[index].sorting,
-            );
-          },
-          itemCount: attractions.length,
+        child: Consumer<HomePageProvider>(
+          builder: (_, provider, __) => ListView.builder(
+            itemBuilder: (_, index) {
+              Attraction attraction = provider.getAttractionsByIndex(index);
+              return AttractionItem(
+                id: attraction.id.toString(),
+                title: attraction.title!,
+                imageUrl: attraction.imageUrl!,
+                shortDescr: attraction.shortDescription!,
+                description: attraction.description!,
+                types: attraction.attrTypes!,
+                workTime: attraction.workTime!,
+                age: attraction.age!,
+                height: attraction.height!,
+                location: attraction.location!,
+                withAdults: attraction.withAdults!,
+                isPurchasedSeparately: attraction.isPurchasedSeparately!,
+                specs: attraction.specs!,
+                isActive: attraction.isActive!,
+                isWorking: attraction.isWorking!,
+                sorting: attraction.sorting!,
+              );
+            },
+            itemCount: provider.attractionList.length,
+          ),
         ),
       ),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './models/attractions.dart';
+//import './models/attractions.dart';
 import './models/types.dart';
 
 const DUMMY_TYPES = const [
@@ -24,7 +24,7 @@ const DUMMY_TYPES = const [
     color: Colors.blue,
   ),
 ];
-
+/*
 const DUMMY_ATTRACTIONS = const [
   Attraction(
     id: 'at01',
@@ -141,5 +141,5 @@ const DUMMY_ATTRACTIONS = const [
     sorting: 50,
   ),
 ];
-
+*/
 //https://www.youtube.com/watch?v=ScINEHxsVuw

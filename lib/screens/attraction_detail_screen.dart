@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sochipark/dummy_data.dart';
+//import 'package:sochipark/dummy_data.dart';
 import '../widgets/wave_widget.dart';
+import '../providers/homepageprovider.dart';
+import 'package:provider/provider.dart';
 //import 'package:sochipark/models/types.dart';
 
 class AttractionDetailScreen extends StatelessWidget {
@@ -54,26 +56,32 @@ class AttractionDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mq = MediaQuery.of(context);
-
+    var provider = Provider.of<HomePageProvider>(context, listen: false);
     final _id =
         ModalRoute.of(context)!.settings.arguments as Map<String, String>;
     final attractionId = _id['id'];
-    final selectedAttraction = DUMMY_ATTRACTIONS
-        .firstWhere((attraction) => attraction.id == attractionId);
-    final _sample = selectedAttraction.types;
+    print('attr $attractionId');
+    //вот тут какая-то херь
+    print(
+        'this is a provider ${provider.attractionList.firstWhere((element) => element.id == 1)}');
+
+    final selectedAttraction = provider.attractionList.firstWhere(
+        (element) => element.id.toString() == attractionId.toString());
+    print('ass ${selectedAttraction.attrTypes}');
+    final _sample = selectedAttraction.attrTypes;
     //_sample.asMap().forEach((index, value) => DUMMY_TYPES.firstWhere((_type) => _type.id == value));
     final List resultTypes = [];
 
 //parsing the types of the attraction
-    for (String ctype in _sample) {
+    /*   for (String ctype in _sample!) {
       final resultName = DUMMY_TYPES.firstWhere((_type) => _type.id == ctype);
       resultTypes.add(resultName.title);
     }
-
+*/
     return Scaffold(
       appBar: AppBar(
         title: FittedBox(
-          child: Text(selectedAttraction.title),
+          child: Text(selectedAttraction.title!),
         ),
       ),
       body: SingleChildScrollView(
@@ -86,7 +94,7 @@ class AttractionDetailScreen extends StatelessWidget {
                     width: double.infinity,
                     child: LayoutBuilder(builder: (ctx, constraints) {
                       return Image.network(
-                        selectedAttraction.imageUrl,
+                        selectedAttraction.imageUrl!,
                         fit: BoxFit.cover,
                       );
                     })),
@@ -129,9 +137,9 @@ class AttractionDetailScreen extends StatelessWidget {
                 ),
               ],
             ),
-            buildSectionTitle(context, selectedAttraction.title),
-            buildSectionText(context, selectedAttraction.shortDescr),
-            buildSectionText(context, selectedAttraction.description),
+            buildSectionTitle(context, selectedAttraction.title!),
+            buildSectionText(context, selectedAttraction.shortDescription!),
+            buildSectionText(context, selectedAttraction.description!),
             Card(
               shadowColor: Colors.deepPurple,
               elevation: 6,
@@ -140,9 +148,9 @@ class AttractionDetailScreen extends StatelessWidget {
                 padding: EdgeInsets.all(5),
                 child: Column(
                   children: <Widget>[
-                    buildItemWithIcon(context, selectedAttraction.workTime,
+                    buildItemWithIcon(context, selectedAttraction.workTime!,
                         Icons.access_time, Colors.teal),
-                    buildItemWithIcon(context, selectedAttraction.specs,
+                    buildItemWithIcon(context, selectedAttraction.specs!,
                         Icons.settings, Colors.orange),
                     buildItemWithIcon(
                         context,
@@ -161,12 +169,12 @@ class AttractionDetailScreen extends StatelessWidget {
                         Colors.green),
                     buildItemWithIcon(
                         context,
-                        selectedAttraction.isPurchasedSeparately
+                        selectedAttraction.isPurchasedSeparately!
                             ? 'Билет покупается отдельно. Не входит в стоимость посещения парка.'
                             : 'Входит в стоимость посещения парка',
                         Icons.request_page_outlined,
                         Colors.blueAccent),
-                    buildItemWithIcon(context, selectedAttraction.location,
+                    buildItemWithIcon(context, selectedAttraction.location!,
                         Icons.location_pin, Colors.indigo),
                   ],
                 ),
