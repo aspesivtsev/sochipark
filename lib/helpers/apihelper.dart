@@ -12,6 +12,7 @@ class APIHelper {
       var response =
           await get(url, headers: {'Content-Type': 'application/json'});
       if (response.statusCode == 200) {
+        //var body = jsonDecode(response.body); //this is standard way, does not work with russian utf-8
         var body = jsonDecode(utf8.decode(response.bodyBytes));
         List<Attraction> attractionList = [];
         body.forEach((e) {

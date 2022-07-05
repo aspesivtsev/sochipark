@@ -60,20 +60,20 @@ class AttractionDetailScreen extends StatelessWidget {
     final _id =
         ModalRoute.of(context)!.settings.arguments as Map<String, String>;
     final attractionId = _id['id'];
-    print('attr $attractionId');
+    //print('attr $attractionId');
     //вот тут какая-то херь
-    print(
-        'this is a provider ${provider.attractionList.firstWhere((element) => element.id == 1)}');
+    //print('this is a provider ${provider.attractionList.firstWhere((element) => element.id == 1)}');
 
     final selectedAttraction = provider.attractionList.firstWhere(
         (element) => element.id.toString() == attractionId.toString());
-    print('ass ${selectedAttraction.attrTypes}');
-    final _sample = selectedAttraction.attrTypes;
+    //print('ass ${selectedAttraction.attrTypes}');
+    //final _sample = selectedAttraction.attrTypes;
+    //print(_sample);
     //_sample.asMap().forEach((index, value) => DUMMY_TYPES.firstWhere((_type) => _type.id == value));
-    final List resultTypes = [];
+    final List<String> resultTypes = selectedAttraction.attrTypes!;
 
 //parsing the types of the attraction
-    /*   for (String ctype in _sample!) {
+/*    for (String ctype in _sample!) {
       final resultName = DUMMY_TYPES.firstWhere((_type) => _type.id == ctype);
       resultTypes.add(resultName.title);
     }
@@ -120,6 +120,7 @@ class AttractionDetailScreen extends StatelessWidget {
                         padding: EdgeInsets.all(3),
                         margin: EdgeInsets.all(3),
                         decoration: BoxDecoration(
+                          color: Colors.black38,
                           border: Border.all(
                             color: Colors.white,
                             width: 1,
