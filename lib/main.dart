@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sochipark/providers/homepageprovider.dart';
 //import './widgets/main_drawer.dart';
-import './screens/attractions_screen.dart';
+import 'screens/attractions_screen.dart';
 import './screens/attraction_detail_screen.dart';
 import './screens/contacts_screen.dart';
 import './screens/calendar_screen.dart';

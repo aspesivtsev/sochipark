@@ -75,9 +75,16 @@ class _AttractionsScreenState extends State<AttractionsScreen> {
       body:
           //removed SafeArea from here so cards could take the whole space available
           Consumer<HomePageProvider>(
-        builder: (_, provider, __) => ListView.builder(
+        builder: (_, item, __) => GridView.builder(
+          physics: AlwaysScrollableScrollPhysics(),
+          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+            maxCrossAxisExtent: 600,
+            childAspectRatio: 3 / 2,
+            mainAxisSpacing: 0,
+            crossAxisSpacing: 0,
+          ),
           itemBuilder: (_, index) {
-            Attraction attraction = provider.getAttractionsByIndex(index);
+            Attraction attraction = item.getAttractionsByIndex(index);
             return AttractionItem(
               id: attraction.id.toString(),
               title: attraction.title!,
@@ -97,7 +104,7 @@ class _AttractionsScreenState extends State<AttractionsScreen> {
               sorting: attraction.sorting!,
             );
           },
-          itemCount: provider.attractionList.length,
+          itemCount: item.attractionList.length,
         ),
       ),
     );

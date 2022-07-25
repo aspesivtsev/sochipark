@@ -32,24 +32,27 @@ class AttractionDetailScreen extends StatelessWidget {
     );
   }
 
-  Widget buildItemWithIcon(
-      BuildContext context, String bodyText, IconData icon, Color iconColor) {
-    return ListTile(
-      leading: CircleAvatar(
-        backgroundColor: iconColor,
-        radius: 20,
-        child: Padding(
-          padding: const EdgeInsets.all(0),
-          child: FittedBox(
-            child: Icon(
-              icon,
-              size: 30,
-              color: Colors.white,
+  Widget buildItemWithIcon(BuildContext context, String bodyText, IconData icon,
+      Color iconColor, String tooltip) {
+    return Tooltip(
+      message: tooltip,
+      child: ListTile(
+        leading: CircleAvatar(
+          backgroundColor: iconColor,
+          radius: 20,
+          child: Padding(
+            padding: const EdgeInsets.all(0),
+            child: FittedBox(
+              child: Icon(
+                icon,
+                size: 30,
+                color: Colors.white,
+              ),
             ),
           ),
         ),
+        title: Text(bodyText),
       ),
-      title: Text(bodyText),
     );
   }
 
@@ -144,39 +147,47 @@ class AttractionDetailScreen extends StatelessWidget {
             Card(
               shadowColor: Colors.deepPurple,
               elevation: 6,
-              margin: EdgeInsets.all(25),
+              margin: EdgeInsets.all(15),
               child: Container(
                 padding: EdgeInsets.all(5),
                 child: Column(
                   children: <Widget>[
-                    buildItemWithIcon(context, selectedAttraction.workTime!,
-                        Icons.access_time, Colors.teal),
+                    buildItemWithIcon(
+                        context,
+                        selectedAttraction.workTime!,
+                        Icons.access_time,
+                        Colors.teal,
+                        "Время работы аттракциона"),
                     buildItemWithIcon(context, selectedAttraction.specs!,
-                        Icons.settings, Colors.orange),
+                        Icons.settings, Colors.orange, "Спецификации"),
                     buildItemWithIcon(
                         context,
                         'Посещение от ${selectedAttraction.age.toString()} лет',
                         Icons.accessibility_new,
-                        Colors.pink),
+                        Colors.pink,
+                        "Возраст"),
                     buildItemWithIcon(
                         context,
                         'Минимальный рост ${selectedAttraction.height.toString()} см',
                         Icons.height,
-                        Colors.pink),
+                        Colors.blueGrey,
+                        "Допустимый рост"),
                     buildItemWithIcon(
                         context,
                         selectedAttraction.withAdults.toString(),
                         Icons.people,
-                        Colors.green),
+                        Colors.green,
+                        "Информация о сопровождающих"),
                     buildItemWithIcon(
                         context,
                         selectedAttraction.isPurchasedSeparately!
                             ? 'Билет покупается отдельно. Не входит в стоимость посещения парка.'
                             : 'Входит в стоимость посещения парка',
                         Icons.request_page_outlined,
-                        Colors.blueAccent),
+                        Colors.blueAccent,
+                        "Входит в единый билет или покупается отдельно"),
                     buildItemWithIcon(context, selectedAttraction.location!,
-                        Icons.location_pin, Colors.indigo),
+                        Icons.location_pin, Colors.indigo, "Где находится"),
                   ],
                 ),
               ),

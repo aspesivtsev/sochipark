@@ -64,7 +64,7 @@ class AttractionItem extends StatelessWidget {
                       topRight: Radius.circular(5)),
                   child: Image.network(
                     imageUrl,
-                    height: 180,
+                    height: 220,
                     width: double.infinity,
                     fit: BoxFit.cover,
                   ), //fit gives nice сropping to fit into the area specified
@@ -135,23 +135,30 @@ class AttractionItem extends StatelessWidget {
                       )
                     ],
                   ),
-                  Row(
-                    children: [
-                      Icon(Icons.accessibility_new),
-                      SizedBox(
-                        width: 6,
-                      ),
-                      Text('$age')
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      Icon(Icons.height),
-                      SizedBox(
-                        width: 6,
-                      ),
-                      Text('$height')
-                    ],
+                  Tooltip(
+                      //всплывающая подсказка
+                      message: "Возраст",
+                      child: Row(
+                        children: [
+                          Icon(Icons.accessibility_new),
+                          SizedBox(
+                            width: 6,
+                          ),
+                          Text('$age')
+                        ],
+                      )),
+                  Tooltip(
+                    //всплывающая подсказка
+                    message: "Рост",
+                    child: Row(
+                      children: [
+                        Icon(Icons.height),
+                        SizedBox(
+                          width: 6,
+                        ),
+                        Text('$height')
+                      ],
+                    ),
                   ),
                 ],
               ),
